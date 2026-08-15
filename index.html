@@ -20,7 +20,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            transition: opacity 1s ease, visibility 1s ease;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
         }
 
         .boot-box {
@@ -32,17 +32,29 @@
             width: 85%;
         }
 
+        /* Testo lampeggiante PRESS ENTER */
+        .blink-text {
+            animation: blinker 1s linear infinite;
+            color: #ffff00;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
         .boot-btn {
             background-color: #00ff00;
             color: #000000;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-family: "Courier New", monospace;
             font-weight: bold;
             font-size: 14px;
             cursor: pointer;
             margin-top: 15px;
-            box-shadow: 2px 2px 0px #ffffff;
+            box-shadow: 3px 3px 0px #ffffff;
         }
 
         .boot-btn:hover {
@@ -240,7 +252,7 @@
 </head>
 <body>
 
-<!-- IMMAGINE / SCHERMATA DI APERTURA DEL PC (BOOT SCREEN) -->
+<!-- SCHERMATA DI APERTURA DEL PC (BOOT SCREEN BLOCANTE) -->
 <div id="boot-screen">
     <div class="boot-box">
         <pre style="font-size: 10px; color: #00ff00;">
@@ -250,10 +262,12 @@
 =====================================================
         </pre>
         <p>BIOS Version 1.09 - MS-DOS 6.22 Loading...</p>
-        <p>Memory Test: <span id="ram-count">16384</span> KB OK</p>
+        <p>Memory Test: 16384 KB OK</p>
         <p>Modem 56k V.90: Connected to Node #1530</p>
-        <p style="color: #ffff00;">[STATUS]: ACCESSO AUTORIZZATO AL SISTEMA</p>
-        <button class="boot-btn" onclick="chiudiBoot()">> AVVIA TERMINALE (ENTER) <</button>
+        <p style="color: #00ff00;">[STATUS]: ACCESSO AUTORIZZATO AL SISTEMA</p>
+        
+        <p class="blink-text">>>> PREMI IL TASTO [ENTER] PER PROSEGUIRE <<<</p>
+        <button class="boot-btn" onclick="chiudiBoot()">⌨️ PREMI ENTER PER AVVIARE IL SITO</button>
     </div>
 </div>
 
@@ -585,20 +599,26 @@
     const webhookURL = "https://discord.com/api/webhooks/1538187596004593736/TgLbwTwNDrbbp10iBPgm4Hle-w6_i4R8WAI6vQDYitQdQPohhj3ta48M920-_4o5Dg8X";
 
     // Funzione chiusura Boot Screen
+    let bootAperto = true;
     function chiudiBoot() {
+        if (!bootAperto) return;
+        bootAperto = false;
+        
         const bootScreen = document.getElementById("boot-screen");
         bootScreen.style.opacity = "0";
         setTimeout(() => {
             bootScreen.style.display = "none";
-        }, 1000);
+        }, 800);
     }
 
-    // Chiusura automatica della schermata di apertura dopo 3,5 secondi
-    setTimeout(() => {
-        chiudiBoot();
-    }, 3500);
+    // LISTENER TASTO ENTER (Invio) PER APRIRE IL SITO
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Enter" && bootAperto) {
+            chiudiBoot();
+        }
+    });
 
-    // Imposta orario di default
+    // Imposta orario di default per il cartellino
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
