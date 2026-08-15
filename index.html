@@ -4,6 +4,52 @@
     <meta charset="UTF-8">
     <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
     <style>
+        /* SCHERMATA DI BOOT / AVVIO PC */
+        #boot-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        .boot-box {
+            border: 2px solid #00ff00;
+            padding: 25px;
+            background-color: #001100;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+            max-width: 600px;
+            width: 85%;
+        }
+
+        .boot-btn {
+            background-color: #00ff00;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 2px 2px 0px #ffffff;
+        }
+
+        .boot-btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
         /* Sfondo Marittimo con Ancore e Salvagenti */
         body {
             background-color: #001a33;
@@ -111,7 +157,7 @@
             font-size: 12px;
         }
 
-        input[type="text"], select, textarea {
+        input[type="text"], input[type="date"], input[type="time"], select, textarea {
             border-top: 2px solid #808080;
             border-left: 2px solid #808080;
             border-right: 2px solid #ffffff;
@@ -135,6 +181,7 @@
             color: #002B49;
             cursor: pointer;
             font-size: 11px;
+            margin-right: 5px;
         }
 
         .btn-win:active {
@@ -193,6 +240,23 @@
 </head>
 <body>
 
+<!-- IMMAGINE / SCHERMATA DI APERTURA DEL PC (BOOT SCREEN) -->
+<div id="boot-screen">
+    <div class="boot-box">
+        <pre style="font-size: 10px; color: #00ff00;">
+=====================================================
+ GUARDIA COSTIERA - TERMINAL OPERATIVO S.I.T. (1994)
+ DELEGAZIONE DI SPIAGGIA - PORTO CESAREO (LE)
+=====================================================
+        </pre>
+        <p>BIOS Version 1.09 - MS-DOS 6.22 Loading...</p>
+        <p>Memory Test: <span id="ram-count">16384</span> KB OK</p>
+        <p>Modem 56k V.90: Connected to Node #1530</p>
+        <p style="color: #ffff00;">[STATUS]: ACCESSO AUTORIZZATO AL SISTEMA</p>
+        <button class="boot-btn" onclick="chiudiBoot()">> AVVIA TERMINALE (ENTER) <</button>
+    </div>
+</div>
+
 <div class="window">
     <!-- Barra del titolo -->
     <div class="title-bar">
@@ -210,7 +274,8 @@
         <span><u>Z</u>ona Marittima</span>
         <span><u>B</u>andi</span>
         <span><u>A</u>rmeria</span>
-        <span><u>S</u>occorso</span>
+        <span><u>P</u>resenze</span>
+        <span><u>D</u>isciplina</span>
     </div>
 
     <div class="content">
@@ -241,7 +306,7 @@
             <i style="color: #555;">Sede operativa attiva sul litorale ionico salentino. Ottimizzato per modem 56k.</i>
         </div>
 
-        <!-- Sezione 1: Bandi e Concorsi -->
+        <!-- Bandi e Concorsi -->
         <fieldset>
             <legend>📁 Bandi e Arruolamenti (Porto Cesareo '94)</legend>
             <table>
@@ -270,7 +335,7 @@
             </table>
         </fieldset>
 
-        <!-- Sezione 2: Modulo Candidatura -->
+        <!-- Modulo Candidatura -->
         <fieldset>
             <legend>📝 Modulo Candidatura / Arruolamento - Porto Cesareo</legend>
             <form id="candidaturaForm">
@@ -314,9 +379,9 @@
             </form>
         </fieldset>
 
-        <!-- SEZIONE NUOVA: ASSUNTI - RIFORNIMENTO ARMAMENTO -->
-        <fieldset style="border-color: #D9261C;">
-            <legend style="color: #D9261C;">🎖️ SEZIONE ASSUNTI - Modulo Richiesta Rifornimento Armamento</legend>
+        <!-- SEZIONE ASSUNTI: RIFORNIMENTO ARMAMENTO -->
+        <fieldset style="border-color: #002B49;">
+            <legend style="color: #002B49;">🔫 SEZIONE ASSUNTI - Modulo Richiesta Rifornimento Armamento</legend>
             <form id="rifornimentoForm">
                 <table border="0" style="border:none;">
                     <tr>
@@ -355,7 +420,153 @@
                     </tr>
                 </table>
                 <br>
-                <button type="submit" class="btn-win" id="submitArmiBtn" style="color: #D9261C;">🔫 Richiedi Rifornimento Armeria</button>
+                <button type="submit" class="btn-win" id="submitArmiBtn">🔫 Richiedi Rifornimento Armeria</button>
+                <button type="reset" class="btn-win">❌ Annulla</button>
+            </form>
+        </fieldset>
+
+        <!-- TIMBRO CARTELLINO ENTRATA/USCITA -->
+        <fieldset style="border-color: #005580;">
+            <legend style="color: #005580;">⏰ TIMBRO CARTELLINO - Registro Presenze Servizio</legend>
+            <form id="cartellinoForm">
+                <table border="0" style="border:none;">
+                    <tr>
+                        <td style="border:none; width:25%;"><b>Militare in Servizio:</b></td>
+                        <td style="border:none; width:75%;"><input type="text" id="cartellinoMilitare" placeholder="Es. Capo di 1ª Classe Marco Bianchi" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Matricola:</b></td>
+                        <td style="border:none;"><input type="text" id="cartellinoMatricola" placeholder="Es. GC-77401" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Azione Cartellino:</b></td>
+                        <td style="border:none;">
+                            <select id="cartellinoTipo" required>
+                                <option value="🟢 ENTRATA IN SERVIZIO">🟢 ENTRATA IN SERVIZIO</option>
+                                <option value="🔴 USCITA DAL SERVIZIO">🔴 USCITA DAL SERVIZIO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Ora Timbro:</b></td>
+                        <td style="border:none;"><input type="time" id="cartellinoOra" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Turno / Reparto:</b></td>
+                        <td style="border:none;">
+                            <select id="cartellinoTurno">
+                                <option value="Turno Mattina (08:00 - 14:00)">Turno Mattina (08:00 - 14:00)</option>
+                                <option value="Turno Pomeriggio (14:00 - 20:00)">Turno Pomeriggio (14:00 - 20:00)</option>
+                                <option value="Turno Notturno (20:00 - 08:00)">Turno Notturno (20:00 - 08:00)</option>
+                                <option value="Pattugliamento SAR Motovedetta">Pattugliamento SAR Motovedetta</option>
+                                <option value="Servizio di Guardia di Porto">Servizio di Guardia di Porto</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" class="btn-win" id="submitCartellinoBtn" style="color: #005580;">⏱️ Timbra Cartellino Digitale</button>
+                <button type="reset" class="btn-win">❌ Annulla</button>
+            </form>
+        </fieldset>
+
+        <!-- RICHIESTA FERIE -->
+        <fieldset style="border-color: #2b7810;">
+            <legend style="color: #2b7810;">📅 SEZIONE ASSUNTI - Modulo Richiesta Ferie e Congedi</legend>
+            <form id="ferieForm">
+                <table border="0" style="border:none;">
+                    <tr>
+                        <td style="border:none; width:25%;"><b>Nome Cognome Militare:</b></td>
+                        <td style="border:none; width:75%;"><input type="text" id="ferieMilitare" placeholder="Es. Sergente Luca Neri" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Matricola:</b></td>
+                        <td style="border:none;"><input type="text" id="ferieMatricola" placeholder="Es. GC-88320" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Dal Giorno:</b></td>
+                        <td style="border:none;"><input type="date" id="ferieDal" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Al Giorno:</b></td>
+                        <td style="border:none;"><input type="date" id="ferieAl" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Tipo di Licenza/Congedo:</b></td>
+                        <td style="border:none;">
+                            <select id="ferieTipo" required>
+                                <option value="Licenza Ordinaria (Ferie Annue)">Licenza Ordinaria (Ferie Annue)</option>
+                                <option value="Licenza Straordinaria per Motivi Personali/Familiari">Licenza Straordinaria per Motivi Personali/Familiari</option>
+                                <option value="Congedo di Malattia / Convalescenza">Congedo di Malattia / Convalescenza</option>
+                                <option value="Riposo Compensativo Straordinari">Riposo Compensativo Straordinari</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Militare Sostituto in Servizio:</b></td>
+                        <td style="border:none;"><input type="text" id="ferieSostituto" placeholder="Es. Capo Franco Russo (facoltativo)"></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;" colspan="2">
+                            <br><b>Motivazione / Note Permesso:</b><br>
+                            <textarea id="ferieMotivo" rows="2" placeholder="Specificare i dettagli o recapito per reperibilità..." required></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" class="btn-win" id="submitFerieBtn" style="color: #2b7810;">🏖️ Invia Richiesta Ferie</button>
+                <button type="reset" class="btn-win">❌ Annulla</button>
+            </form>
+        </fieldset>
+
+        <!-- RAPPORTO DISCIPLINARE -->
+        <fieldset style="border-color: #D9261C;">
+            <legend style="color: #D9261C;">⚠️ UFFICIO DISCIPLINARE - Rapporto e Richiami Disciplinari</legend>
+            <form id="disciplinareForm">
+                <table border="0" style="border:none;">
+                    <tr>
+                        <td style="border:none; width:25%;"><b>Ufficiale / Segnalante:</b></td>
+                        <td style="border:none; width:75%;"><input type="text" id="discSegnalante" placeholder="Es. Comandante in Seconda A. Rossi" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Militare Segnalato/Infrattore:</b></td>
+                        <td style="border:none;"><input type="text" id="discInfrattore" placeholder="Es. Marinaio Giovanni Doe" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Matricola Infrattore:</b></td>
+                        <td style="border:none;"><input type="text" id="discMatricola" placeholder="Es. GC-11203" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Tipo di Richiamo / Provvedimento:</b></td>
+                        <td style="border:none;">
+                            <select id="discTipo" required>
+                                <option value="Richiamo Verbale Formalizzato">Richiamo Verbale Formalizzato</option>
+                                <option value="Rimprovero Scritto (Monito Disciplinare)">Rimprovero Scritto (Monito Disciplinare)</option>
+                                <option value="Rapporto per Insubordinazione o Mancanza Grave">Rapporto per Insubordinazione o Mancanza Grave</option>
+                                <option value="Segnalazione Ritardo / Assenza Ingiustificata">Segnalazione Ritardo / Assenza Ingiustificata</option>
+                                <option value="Inosservanza Regolamento Divisa / Dotazione">Inosservanza Regolamento Divisa / Dotazione</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Gravità Infrazione:</b></td>
+                        <td style="border:none;">
+                            <select id="discGravita">
+                                <option value="Lieve">Lieve (Primo richiamo)</option>
+                                <option value="Media">Media (Recidiva)</option>
+                                <option value="Grave">Grave (Apertura procedimento disciplinare)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;" colspan="2">
+                            <br><b>Descrizione Dettagliata dei Fatti Contestati:</b><br>
+                            <textarea id="discDescrizione" rows="3" placeholder="Includere data, ora, luogo ed eventuali testimoni dell'accaduto..." required></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" class="btn-win" id="submitDiscBtn" style="color: #D9261C;">🚨 Trasmetti Rapporto Disciplinare al Comando</button>
                 <button type="reset" class="btn-win">❌ Annulla</button>
             </form>
         </fieldset>
@@ -369,11 +580,31 @@
     </div>
 </div>
 
-<!-- Script Webhook Discord -->
+<!-- Script Gestione Boot Screen e Webhook Discord -->
 <script>
     const webhookURL = "https://discord.com/api/webhooks/1538187596004593736/TgLbwTwNDrbbp10iBPgm4Hle-w6_i4R8WAI6vQDYitQdQPohhj3ta48M920-_4o5Dg8X";
 
-    // Gestione Candidatura
+    // Funzione chiusura Boot Screen
+    function chiudiBoot() {
+        const bootScreen = document.getElementById("boot-screen");
+        bootScreen.style.opacity = "0";
+        setTimeout(() => {
+            bootScreen.style.display = "none";
+        }, 1000);
+    }
+
+    // Chiusura automatica della schermata di apertura dopo 3,5 secondi
+    setTimeout(() => {
+        chiudiBoot();
+    }, 3500);
+
+    // Imposta orario di default
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    document.getElementById("cartellinoOra").value = `${hours}:${minutes}`;
+
+    // 1. Modulo Candidatura
     document.getElementById("candidaturaForm").addEventListener("submit", function(e) {
         e.preventDefault();
         const btn = document.getElementById("submitBtn");
@@ -401,31 +632,117 @@
         inviaWebhook(payload, btn, "📤 Trasmetti Candidatura via Telefax", "Candidatura inoltrata con successo!");
     });
 
-    // Gestione Rifornimento Armamento Assunti
+    // 2. Modulo Rifornimento Armamento
     document.getElementById("rifornimentoForm").addEventListener("submit", function(e) {
         e.preventDefault();
         const btn = document.getElementById("submitArmiBtn");
-        btn.innerText = "Trasmissione autorizzazione armeria...";
+        btn.innerText = "Trasmissione in corso...";
         btn.disabled = true;
 
         const payload = {
-            content: "🔫 **RICHIESTA RIFORNIMENTO ARMAMENTO - SEZIONE ASSUNTI** 🔫",
+            content: "🔫 **RICHIESTA RIFORNIMENTO ARMAMENTO** 🔫",
             embeds: [{
                 title: "Richiesta Materiale Armeria / Guardia Costiera",
-                color: 14231068, // Rosso
+                color: 14231068,
                 fields: [
                     { name: "🎖️ Militare Richiedente", value: document.getElementById("militareNome").value, inline: true },
                     { name: "🪪 Grado / Matricola", value: document.getElementById("matricola").value, inline: true },
                     { name: "📦 Rifornimento Richiesto", value: document.getElementById("tipoRifornimento").value, inline: false },
                     { name: "📋 Motivo del Rifornimento", value: document.getElementById("motivoRifornimento").value, inline: false },
-                    { name: "📝 Note Operative", value: document.getElementById("noteRifornimento").value || "Nessuna nota specificata.", inline: false }
+                    { name: "📝 Note Operative", value: document.getElementById("noteRifornimento").value || "Nessuna nota.", inline: false }
                 ],
                 footer: { text: "Comando Armeria - Ufficio Locale Marittimo Porto Cesareo" },
                 timestamp: new Date().toISOString()
             }]
         };
 
-        inviaWebhook(payload, btn, "🔫 Richiedi Rifornimento Armeria", "Richiesta di rifornimento armamento trasmessa all'Armeria!");
+        inviaWebhook(payload, btn, "🔫 Richiedi Rifornimento Armeria", "Richiesta armeria trasmessa con successo!");
+    });
+
+    // 3. Modulo Timbro Cartellino
+    document.getElementById("cartellinoForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const btn = document.getElementById("submitCartellinoBtn");
+        btn.innerText = "Registrazione timbro...";
+        btn.disabled = true;
+
+        const azione = document.getElementById("cartellinoTipo").value;
+        const color = azione.includes("ENTRATA") ? 3066993 : 15158332;
+
+        const payload = {
+            content: `⏱️ **TIMBRO CARTELLINO: ${azione}**`,
+            embeds: [{
+                title: "Registro Presenze Servizio Marittimo",
+                color: color,
+                fields: [
+                    { name: "🎖️ Militare", value: document.getElementById("cartellinoMilitare").value, inline: true },
+                    { name: "🪪 Matricola", value: document.getElementById("cartellinoMatricola").value, inline: true },
+                    { name: "⏰ Ora Timbro", value: document.getElementById("cartellinoOra").value, inline: true },
+                    { name: "📌 Tipo Operazione", value: azione, inline: true },
+                    { name: "🚤 Turno / Reparto", value: document.getElementById("cartellinoTurno").value, inline: false }
+                ],
+                footer: { text: "Registro Presenze - Porto Cesareo" },
+                timestamp: new Date().toISOString()
+            }]
+        };
+
+        inviaWebhook(payload, btn, "⏱️ Timbra Cartellino Digitale", "Timbro cartellino registrato nel sistema!");
+    });
+
+    // 4. Modulo Richiesta Ferie
+    document.getElementById("ferieForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const btn = document.getElementById("submitFerieBtn");
+        btn.innerText = "Invio richiesta ferie...";
+        btn.disabled = true;
+
+        const payload = {
+            content: "📅 **RICHIESTA LICENZA / FERIE PERSONALE** 📅",
+            embeds: [{
+                title: "Domanda di Licenza e Congedo Operativo",
+                color: 2848784,
+                fields: [
+                    { name: "🎖️ Militare Richiedente", value: document.getElementById("ferieMilitare").value, inline: true },
+                    { name: "🪪 Matricola", value: document.getElementById("ferieMatricola").value, inline: true },
+                    { name: "🗓️ PERIODO RICHIESTO", value: `**Dal:** ${document.getElementById("ferieDal").value}\n**Al:** ${document.getElementById("ferieAl").value}`, inline: false },
+                    { name: "📋 Tipo Licenza", value: document.getElementById("ferieTipo").value, inline: true },
+                    { name: "🔄 Sostituto Designato", value: document.getElementById("ferieSostituto").value || "Nessun sostituto indicato", inline: true },
+                    { name: "📝 Motivazione / Note", value: document.getElementById("ferieMotivo").value, inline: false }
+                ],
+                footer: { text: "Ufficio Personale e Congedi - Porto Cesareo" },
+                timestamp: new Date().toISOString()
+            }]
+        };
+
+        inviaWebhook(payload, btn, "🏖️ Invia Richiesta Ferie", "Domanda di ferie trasmessa al Comando per l'approvazione!");
+    });
+
+    // 5. Modulo Rapporto Disciplinare
+    document.getElementById("disciplinareForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const btn = document.getElementById("submitDiscBtn");
+        btn.innerText = "Inoltro rapporto al Comando...";
+        btn.disabled = true;
+
+        const payload = {
+            content: "⚠️ **RAPPORTO / RICHIAMO DISCIPLINARE TRANSMESSO** ⚠️",
+            embeds: [{
+                title: "Segnalazione Inosservanza Disciplinare",
+                color: 14231068,
+                fields: [
+                    { name: "👮 Segnalante / Ufficiale", value: document.getElementById("discSegnalante").value, inline: true },
+                    { name: "⚠️ Militare Contestato", value: document.getElementById("discInfrattore").value, inline: true },
+                    { name: "🪪 Matricola", value: document.getElementById("discMatricola").value, inline: true },
+                    { name: "📌 Tipo Provvedimento", value: document.getElementById("discTipo").value, inline: false },
+                    { name: "🚨 Livello Gravità", value: document.getElementById("discGravita").value, inline: true },
+                    { name: "📄 Dettagli Contestate Violazioni", value: document.getElementById("discDescrizione").value, inline: false }
+                ],
+                footer: { text: "Ufficio Disciplina e Regolamento - Porto Cesareo" },
+                timestamp: new Date().toISOString()
+            }]
+        };
+
+        inviaWebhook(payload, btn, "🚨 Trasmetti Rapporto Disciplinare al Comando", "Rapporto disciplinare inviato riservatamente al Comando!");
     });
 
     function inviaWebhook(payload, btn, testoOriginale, messaggioSuccesso) {
