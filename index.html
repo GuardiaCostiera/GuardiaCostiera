@@ -62,7 +62,7 @@
             color: #000000;
         }
 
-        /* Sfondo Marittimo con Ancore e Salvagenti */
+        /* Sfondo Marittimo con Logo Transparente */
         body {
             background-color: #001a33;
             background-image: 
@@ -78,10 +78,33 @@
             font-family: "MS Sans Serif", Tahoma, sans-serif;
             font-size: 11px;
             margin: 15px;
+            position: relative;
+        }
+
+        /* Immagine di sfondo trasparente in filigrana */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 700px;
+            max-width: 90vw;
+            max-height: 90vh;
+            background-image: url("logo.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.15; /* Regola la trasparenza (0.15 = 15%) */
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Finestra Stile Windows 95 - Dimensione Ingrandita (1100px) */
         .window {
+            position: relative;
+            z-index: 1;
             background-color: #c0c0c0;
             border-top: 2px solid #ffffff;
             border-left: 2px solid #ffffff;
