@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Guardia Costiera - Puglia (v1.994)</title>
+    <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
     <style>
         body {
             background-color: #008080; /* Teal classico Windows 95 */
@@ -162,7 +162,7 @@
 <div class="window">
     <!-- Barra del titolo -->
     <div class="title-bar">
-        <span>C:\GUARDIA_COSTIERA_PUGLIA\SITO_UFFICIALE.EXE</span>
+        <span>C:\GUARDIA_COSTIERA_PORTO_CESAREO\SITO_UFFICIALE.EXE</span>
         <div style="display:flex; gap:2px;">
             <div class="title-btn">_</div>
             <div class="title-btn">□</div>
@@ -181,29 +181,21 @@
 
     <div class="content">
         <!-- Testo scorrevole e Contatore -->
-        <marquee>+++ COMPARTIMENTO MARITTIMO PUGLIA - EMERGENZA MARE: CANALE 16 VHF / NUMERO BLU 1530 - ESTATE 1994 +++</marquee>
+        <marquee>+++ UFFICIO LOCALE MARITTIMO PORTO CESAREO (PUGLIA) - EMERGENZA MARE: CANALE 16 VHF / NUMERO BLU 1530 - ESTATE 1994 +++</marquee>
         
         <br>
 
-        <!-- Sezione Intro -->
-        <div class="inset-box">
-            <table border="0" style="border:none;">
-                <tr>
-                    <td style="border:none; width:60px;">
-                        <font size="6">⚓</font>
-                    </td>
-                    <td style="border:none;">
-                        <h2 style="margin:0; font-size:14px; color:#000080;">CAPITANERIA DI PORTO - DIREZIONE MARITTIMA PUGLIA</h2>
-                        <b>Terminal Operativo Locale (S.I.T.) - Anno 1994</b><br>
-                        <i>Basi operative attive: Bari, Brindisi, Taranto, Gallipoli, Otranto. Ottimizzato per modem 56k.</i>
-                    </td>
-                </tr>
-            </table>
+        <!-- Sezione Intro con Logo inserito -->
+        <div class="inset-box" style="text-align: center; background-color: #f5f5f0;">
+            <img src="f68d1d866da240e6aba367abcaf38e3e.png" alt="Logo Apulia 90" style="max-width: 280px; height: auto; border: 1px solid #808080; margin-bottom: 8px;">
+            <h2 style="margin: 0 0 4px 0; font-size: 14px; color: #000080;">UFFICIO LOCALE MARITTIMO - PORTO CESAREO</h2>
+            <b>Terminal Operativo Locale (S.I.T.) - Anno 1994</b><br>
+            <i>Sede operativa attiva sul litorale ionico salentino. Ottimizzato per modem 56k.</i>
         </div>
 
         <!-- Sezione 1: Bandi e Concorsi -->
         <fieldset>
-            <legend>📁 Bandi e Arruolamenti (Puglia '94)</legend>
+            <legend>📁 Bandi e Arruolamenti (Porto Cesareo '94)</legend>
             <table>
                 <thead>
                     <tr>
@@ -215,14 +207,14 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>BARI-94-01</td>
-                        <td>Imbarco su Motovedetta SAR Classe 300</td>
+                        <td>CESAREO-94-01</td>
+                        <td>Imbarco su Motovedetta Litoranea SAR</td>
                         <td>30/08/1994</td>
                         <td><font color="red"><b>APERTO</b></font></td>
                     </tr>
                     <tr>
-                        <td>BR-94-02</td>
-                        <td>Personale Tecnico per Nucleo Sommozzatori</td>
+                        <td>CESAREO-94-02</td>
+                        <td>Personale per Controllo Area Marina Protetta</td>
                         <td>15/09/1994</td>
                         <td>SELEZIONE</td>
                     </tr>
@@ -230,52 +222,52 @@
             </table>
         </fieldset>
 
-        <!-- Sezione 2: Flotta Navale Regionale -->
+        <!-- Sezione 2: Flotta Navale Locale -->
         <fieldset>
-            <legend>🛥️ Mezzi Navali in Servizio nel Compartimento</legend>
+            <legend>🛥️ Mezzi Navali in Servizio a Porto Cesareo</legend>
             <div class="inset-box" style="background-color: #e0e0e0; margin-bottom:0;">
                 <ul>
-                    <li><b>CP 301 (Bari):</b> Unità SAR d'altura per il soccorso nel Basso Adriatico.</li>
-                    <li><b>CP 809 (Brindisi):</b> Pattugliatore costiero per controllo flotta peschereccia.</li>
-                    <li><b>CP 502 (Gallipoli):</b> Vedetta veloce per interventi rapidi sullo Ionio.</li>
+                    <li><b>CP 842 (Porto Cesareo):</b> Motovedetta costiera per la vigilanza della secca e delle acque ioniche locali.</li>
+                    <li><b>G.C. Battello Pneumatico Veloce:</b> Per interventi rapidi sotto costa e soccorso bagnanti.</li>
                 </ul>
             </div>
         </fieldset>
 
-        <!-- Sezione 3: Modulo Candidatura / Arruolamento con invio su Discord -->
+        <!-- Sezione 3: Modulo Candidatura -->
         <fieldset>
-            <legend>📝 Modulo Candidatura / Richiesta Imbarco (Inedito)</legend>
+            <legend>📝 Modulo Candidatura / Arruolamento - Porto Cesareo</legend>
             <form id="candidaturaForm">
                 <table border="0" style="border:none;">
                     <tr>
-                        <td style="border:none; width:15%;"><b>Nomativo / Grado:</b></td>
-                        <td style="border:none; width:35%;"><input type="text" id="nome" placeholder="Es. Sottocapo Rossi" required></td>
-                        <td style="border:none; width:15%;"><b>Sede Prescelta:</b></td>
-                        <td style="border:none; width:35%;">
-                            <select id="sede">
-                                <option>Capitaneria di Porto - Bari</option>
-                                <option>Circomare - Brindisi</option>
-                                <option>Capitaneria di Porto - Taranto</option>
-                                <option>Uff. Locale Marittimo - Gallipoli</option>
-                                <option>Uff. Locale Marittimo - Otranto</option>
+                        <td style="border:none; width:30%;"><b>Nome Cognome:</b></td>
+                        <td style="border:none; width:70%;"><input type="text" id="nomeCognome" placeholder="Es. Mario Rossi" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Età:</b></td>
+                        <td style="border:none;"><input type="text" id="eta" placeholder="Es. 25" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Diploma di scuola superiore o titolo equivalente:</b></td>
+                        <td style="border:none;"><input type="text" id="titoloStudio" placeholder="Es. Diploma di Maturità Scientifica" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Esperienze:</b></td>
+                        <td style="border:none;"><textarea id="esperienze" rows="2" placeholder="Descrivi le tue esperienze pregresse..."></textarea></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Sei propenso a prendere il porto d’armi?</b></td>
+                        <td style="border:none;">
+                            <select id="portoArmi">
+                                <option value="Sì">Sì</option>
+                                <option value="No">No</option>
+                                <option value="Già in possesso">Già in possesso</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td style="border:none;"><b>Specializzazione:</b></td>
-                        <td style="border:none;" colspan="3">
-                            <select id="specializzazione">
-                                <option>Comandante di Unità Navale / Motorista</option>
-                                <option>Addetto alle Comunicazioni Radio (VHF / Emergenze)</option>
-                                <option>Nucleo Operativo di Terra / Polizia Marittima</option>
-                                <option>Soccorritore Marittimo (SAR)</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border:none;" colspan="4">
-                            <br><b>Note Operative / Esperienza Pregressa:</b><br>
-                            <textarea id="note" rows="3" placeholder="Inserire brevi note sul servizio o motivazioni all'imbarco..."></textarea>
+                        <td style="border:none;" colspan="2">
+                            <br><b>Serietà, disciplina e capacità di lavorare in squadra:</b><br>
+                            <textarea id="disciplina" rows="2" placeholder="Esprimi brevemente il tuo impegno su questi valori..." required></textarea>
                         </td>
                     </tr>
                 </table>
@@ -289,8 +281,8 @@
 
     <!-- Barra di Stato -->
     <div class="status-bar">
-        <span>Connesso a: Nodo Puglia (Bari Hub 080) - Linea Dedicata</span>
-        <span>Visitatori N°: <b>008942</b></span>
+        <span>Connesso a: Nodo Porto Cesareo (Delegazione di Spiaggia)</span>
+        <span>Visitatori N°: <b>002491</b></span>
     </div>
 </div>
 
@@ -305,26 +297,30 @@
         btn.innerText = "Invio in corso via modem...";
         btn.disabled = true;
 
-        const nome = document.getElementById("nome").value;
-        const sede = document.getElementById("sede").value;
-        const specializzazione = document.getElementById("specializzazione").value;
-        const note = document.getElementById("note").value || "Nessuna nota aggiuntiva.";
+        const nomeCognome = document.getElementById("nomeCognome").value;
+        const eta = document.getElementById("eta").value;
+        const titoloStudio = document.getElementById("titoloStudio").value;
+        const esperienze = document.getElementById("esperienze").value || "Nessuna esperienza specificata.";
+        const portoArmi = document.getElementById("portoArmi").value;
+        const disciplina = document.getElementById("disciplina").value;
 
         // Creazione del payload per Discord in stile Embed
         const payload = {
-            content: "🚨 **NUOVA CANDIDATURA RICEVUTA - GUARDIA COSTIERA PUGLIA ('94)** 🚨",
+            content: "🚨 **NUOVA CANDIDATURA - GUARDIA COSTIERA PORTO CESAREO ('94)** 🚨",
             embeds: [
                 {
-                    title: "Dettagli Arruolamento / Assegnazione",
+                    title: "Dettagli Arruolamento / Porto Cesareo",
                     color: 3447003, // Blu scuro
                     fields: [
-                        { name: "👤 Richiedente", value: nome, inline: true },
-                        { name: "📍 Sede", value: sede, inline: true },
-                        { name: "⚓ Specializzazione", value: specializzazione, inline: false },
-                        { name: "📄 Note Operative", value: note, inline: false }
+                        { name: "👤 Nome e Cognome", value: nomeCognome, inline: true },
+                        { name: "📅 Età", value: eta, inline: true },
+                        { name: "🎓 Titolo di Studio", value: titoloStudio, inline: false },
+                        { name: "📜 Esperienze", value: esperienze, inline: false },
+                        { name: "🔫 Porto d'armi", value: portoArmi, inline: true },
+                        { name: "🛡️ Serietà, Disciplina e Teamwork", value: disciplina, inline: false }
                     ],
                     footer: {
-                        text: "Sistema Telematico Guardia Costiera - Anno 1994"
+                        text: "Ufficio Locale Marittimo Porto Cesareo - Anno 1994"
                     },
                     timestamp: new Date().toISOString()
                 }
@@ -340,7 +336,7 @@
         })
         .then(response => {
             if (response.ok) {
-                alert("Trasmissione completata con successo! La candidatura è stata inoltrata al Comando centrale su Discord.");
+                alert("Trasmissione completata con successo! La candidatura è stata inoltrata al Comando di Porto Cesareo su Discord.");
                 document.getElementById("candidaturaForm").reset();
             } else {
                 alert("Errore durante la trasmissione dati via linea analogica. Riprovare.");
