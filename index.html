@@ -28,7 +28,7 @@
             padding: 25px;
             background-color: #001100;
             box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
-            max-width: 600px;
+            max-width: 650px;
             width: 85%;
         }
 
@@ -322,28 +322,40 @@
 
         <!-- Bandi e Concorsi -->
         <fieldset>
-            <legend>📁 Bandi e Arruolamenti (Porto Cesareo '94)</legend>
+            <legend>📁 Bandi, Concorsi e Arruolamenti (Porto Cesareo '94)</legend>
             <table>
                 <thead>
                     <tr>
-                        <th>Codice Sede</th>
-                        <th>Profilo / Unità Navale</th>
-                        <th>Scadenza</th>
+                        <th>Profilo / Profilo Concorso</th>
+                        <th>Requisiti Minimi</th>
+                        <th>Modalità di Accesso</th>
                         <th>Stato</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>CESAREO-94-01</td>
-                        <td>Imbarco su Motovedetta Litoranea SAR</td>
-                        <td>30/08/1994</td>
+                        <td><b>1. VFI e VFT (Volontari)</b></td>
+                        <td>Licenza media, età 18-25 anni</td>
+                        <td>Concorsi Marina Militare (Capitanerie di Porto - Nocchieri di Porto)</td>
                         <td><font color="#D9261C"><b>APERTO</b></font></td>
                     </tr>
                     <tr>
-                        <td>CESAREO-94-02</td>
-                        <td>Personale per Controllo Area Marina Protetta</td>
-                        <td>15/09/1994</td>
+                        <td><b>2. Allievi Marescialli</b></td>
+                        <td>Diploma di scuola superiore, età 17-26 anni</td>
+                        <td>Concorso pubblico per ammissione corso biennale Sottufficiali</td>
+                        <td><font color="#D9261C"><b>APERTO</b></font></td>
+                    </tr>
+                    <tr>
+                        <td><b>3. Allievi Ufficiali</b></td>
+                        <td>Diploma (Accademia Navale) / Laurea specifica (Ruoli speciali)</td>
+                        <td>Concorsi per la formazione degli Ufficiali</td>
                         <td>SELEZIONE</td>
+                    </tr>
+                    <tr>
+                        <td><b>4. Concorsi Interni</b></td>
+                        <td>Personale già in servizio nella Forza Armata</td>
+                        <td>Bandi riservati per l'avanzamento di carriera</td>
+                        <td>RISERVATO</td>
                     </tr>
                 </tbody>
             </table>
@@ -355,20 +367,31 @@
             <form id="candidaturaForm">
                 <table border="0" style="border:none;">
                     <tr>
-                        <td style="border:none; width:25%;"><b>Nome Cognome:</b></td>
-                        <td style="border:none; width:75%;"><input type="text" id="nomeCognome" placeholder="Es. Mario Rossi" required></td>
+                        <td style="border:none; width:30%;"><b>Tipologia Concorso / Profilo:</b></td>
+                        <td style="border:none; width:70%;">
+                            <select id="tipoConcorso" required>
+                                <option value="1. VFI e VFT (Volontari) - [Licenza media, 18-25 anni]">1. VFI e VFT (Volontari) - Licenza media, 18-25 anni</option>
+                                <option value="2. Allievi Marescialli - [Diploma, 17-26 anni]">2. Allievi Marescialli - Diploma, 17-26 anni</option>
+                                <option value="3. Allievi Ufficiali - [Diploma / Laurea specifica]">3. Allievi Ufficiali - Diploma / Laurea specifica</option>
+                                <option value="4. Concorsi Interni - [Già in servizio]">4. Concorsi Interni - Personale già in servizio</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Nome e Cognome:</b></td>
+                        <td style="border:none;"><input type="text" id="nomeCognome" placeholder="Es. Mario Rossi" required></td>
                     </tr>
                     <tr>
                         <td style="border:none;"><b>Età:</b></td>
-                        <td style="border:none;"><input type="text" id="eta" placeholder="Es. 25" required></td>
+                        <td style="border:none;"><input type="text" id="eta" placeholder="Es. 20" required></td>
                     </tr>
                     <tr>
-                        <td style="border:none;"><b>Diploma o titolo equivalente:</b></td>
-                        <td style="border:none;"><input type="text" id="titoloStudio" placeholder="Es. Diploma di Maturità Scientifica" required></td>
+                        <td style="border:none;"><b>Titolo di Studio Posseduto:</b></td>
+                        <td style="border:none;"><input type="text" id="titoloStudio" placeholder="Es. Licenza Media / Diploma di Maturità / Laurea" required></td>
                     </tr>
                     <tr>
-                        <td style="border:none;"><b>Esperienze:</b></td>
-                        <td style="border:none;"><textarea id="esperienze" rows="2" placeholder="Descrivi le tue esperienze pregresse..."></textarea></td>
+                        <td style="border:none;"><b>Esperienze Pregresse:</b></td>
+                        <td style="border:none;"><textarea id="esperienze" rows="2" placeholder="Descrivi le tue esperienze marittime o lavorative..."></textarea></td>
                     </tr>
                     <tr>
                         <td style="border:none;"><b>Sei propenso a prendere il porto d’armi?</b></td>
@@ -634,9 +657,10 @@
         const payload = {
             content: "🚨 **NUOVA CANDIDATURA - GUARDIA COSTIERA PORTO CESAREO ('94)** 🚨",
             embeds: [{
-                title: "Dettagli Arruolamento / Porto Cesareo",
+                title: "Dettagli Arruolamento / Concorso Selezionato",
                 color: 115881,
                 fields: [
+                    { name: "📋 Tipo Concorso", value: document.getElementById("tipoConcorso").value, inline: false },
                     { name: "👤 Nome e Cognome", value: document.getElementById("nomeCognome").value, inline: true },
                     { name: "📅 Età", value: document.getElementById("eta").value, inline: true },
                     { name: "🎓 Titolo di Studio", value: document.getElementById("titoloStudio").value, inline: false },
