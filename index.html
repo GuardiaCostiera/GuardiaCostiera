@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
     <style>
+        /* Sfondo a tema marittimo Guardia Costiera */
         body {
-            background-color: #008080; /* Colore di fallback */
-            background-image: url('sfondog.png'); /* Sfondo personalizzato con la barca */
-            background-repeat: no-repeat; /* Evita la ripetizione a mosaico */
-            background-size: cover; /* Riempie lo schermo con un'immagine unica */
-            background-position: center; /* Centra l'immagine */
-            background-attachment: fixed; /* Mantiene lo sfondo fisso durante lo scorrimento */
+            background-color: #001f3f;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+                repeating-linear-gradient(-45deg, #001f3f 0px, #001f3f 20px, #00152b 20px, #00152b 40px);
             font-family: "MS Sans Serif", Tahoma, sans-serif;
             font-size: 11px;
             margin: 10px;
         }
 
-        /* Finestra Stile Windows */
+        /* Finestra Stile Windows 95 con bordi stile Guardia Costiera */
         .window {
             background-color: #c0c0c0;
             border-top: 2px solid #ffffff;
@@ -26,17 +25,19 @@
             width: 820px;
             margin: 0 auto;
             padding: 2px;
-            box-shadow: 3px 3px 0px #000;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.6);
         }
 
+        /* Barra del titolo con gradient Blu Guardia Costiera */
         .title-bar {
-            background: linear-gradient(90deg, #000080, #1084d0);
-            padding: 3px;
+            background: linear-gradient(90deg, #002B49 0%, #D9261C 100%);
+            padding: 4px;
             color: white;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            letter-spacing: 0.5px;
         }
 
         .title-btn {
@@ -52,6 +53,7 @@
             text-align: center;
             line-height: 12px;
             cursor: pointer;
+            color: #000;
         }
 
         .menu-bar {
@@ -64,6 +66,8 @@
             margin-right: 10px;
             text-decoration: underline;
             cursor: pointer;
+            color: #002B49;
+            font-weight: bold;
         }
 
         .content {
@@ -84,13 +88,17 @@
 
         /* Form e Pulsanti */
         fieldset {
-            border: 2px groove #ffffff;
+            border: 2px groove #002B49;
             margin-bottom: 10px;
             padding: 8px;
+            background-color: #d4d0c8;
         }
 
         legend {
             font-weight: bold;
+            color: #002B49;
+            background-color: #c0c0c0;
+            padding: 0 4px;
         }
 
         input[type="text"], select, textarea {
@@ -112,8 +120,9 @@
             border-left: 2px solid #ffffff;
             border-right: 2px solid #000000;
             border-bottom: 2px solid #000000;
-            padding: 3px 10px;
+            padding: 4px 12px;
             font-weight: bold;
+            color: #002B49;
             cursor: pointer;
         }
 
@@ -124,7 +133,7 @@
             border-bottom: 2px solid #ffffff;
         }
 
-        /* Tabella Anni '90 */
+        /* Tabella Retro */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -138,18 +147,19 @@
         }
 
         th {
-            background-color: #c0c0c0;
+            background-color: #002B49;
+            color: #ffffff;
             border-top: 1px solid #fff;
             border-left: 1px solid #fff;
         }
 
-        /* Effetti retrò */
         marquee {
-            background-color: #000080;
-            color: #00ff00;
+            background-color: #002B49;
+            color: #F1AB00;
             font-family: "Courier New", monospace;
-            padding: 2px;
+            padding: 3px;
             font-weight: bold;
+            border: 1px solid #000;
         }
 
         .status-bar {
@@ -159,6 +169,14 @@
             font-size: 10px;
             display: flex;
             justify-content: space-between;
+            color: #002B49;
+        }
+
+        /* Contenitore Logo Vettoriale */
+        .logo-container {
+            margin: 5px auto 10px auto;
+            width: 120px;
+            height: 120px;
         }
     </style>
 </head>
@@ -167,7 +185,7 @@
 <div class="window">
     <!-- Barra del titolo -->
     <div class="title-bar">
-        <span>C:\GUARDIA_COSTIERA_PORTO_CESAREO\SITO_UFFICIALE.EXE</span>
+        <span>⚓ C:\GUARDIA_COSTIERA_PORTO_CESAREO\SITO_UFFICIALE.EXE</span>
         <div style="display:flex; gap:2px;">
             <div class="title-btn">_</div>
             <div class="title-btn">□</div>
@@ -190,12 +208,32 @@
         
         <br>
 
-        <!-- Sezione Intro con Logo inserito e sfondo color crema -->
-        <div class="inset-box" style="text-align: center; background-color: #fdfbf7;">
-            <img src="logo.png" alt="Logo Apulia 90" style="max-width: 280px; height: auto; border: 1px solid #808080; margin-bottom: 8px;">
-            <h2 style="margin: 0 0 4px 0; font-size: 14px; color: #000080;">UFFICIO LOCALE MARITTIMO - PORTO CESAREO</h2>
-            <b>Terminal Operativo Locale (S.I.T.) - Anno 1994</b><br>
-            <i>Sede operativa attiva sul litorale ionico salentino. Ottimizzato per modem 56k.</i>
+        <!-- Sezione Intro con Logo SVG Generato -->
+        <div class="inset-box" style="text-align: center; background-color: #f7f9fa;">
+            
+            <!-- LOGO GUARDIA COSTIERA (SVG Vettoriale integrato) -->
+            <div class="logo-container">
+                <svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Scudo Esterno Blu -->
+                    <path d="M 100 10 L 170 40 L 170 110 C 170 155 100 185 100 185 C 100 185 30 155 30 110 L 30 40 Z" fill="#002B49" stroke="#F1AB00" stroke-width="4"/>
+                    <!-- Bordo Interno Oro -->
+                    <path d="M 100 18 L 162 45 L 162 108 C 162 148 100 175 100 175 C 100 175 38 148 38 108 L 38 45 Z" fill="none" stroke="#F1AB00" stroke-width="2"/>
+                    <!-- Banda Rossa Diagonale Tipica Guardia Costiera -->
+                    <path d="M 50 40 L 110 40 L 150 160 L 90 160 Z" fill="#D9261C" />
+                    <path d="M 115 40 L 125 40 L 165 160 L 155 160 Z" fill="#FFFFFF" />
+                    <!-- Ancora Centrale -->
+                    <circle cx="100" cy="70" r="8" fill="none" stroke="#F1AB00" stroke-width="4"/>
+                    <line x1="100" y1="78" x2="100" y2="135" stroke="#F1AB00" stroke-width="6"/>
+                    <line x1="80" y1="92" x2="120" y2="92" stroke="#F1AB00" stroke-width="6"/>
+                    <path d="M 72 115 C 72 140 128 140 128 115" fill="none" stroke="#F1AB00" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M 68 110 L 76 117 L 65 122 Z" fill="#F1AB00"/>
+                    <path d="M 132 110 L 124 117 L 135 122 Z" fill="#F1AB00"/>
+                </svg>
+            </div>
+
+            <h2 style="margin: 0 0 4px 0; font-size: 15px; color: #002B49; text-transform: uppercase;">Ufficio Locale Marittimo - Porto Cesareo</h2>
+            <b style="color: #D9261C;">Terminal Operativo Locale (S.I.T.) - Anno 1994</b><br>
+            <i style="color: #555;">Sede operativa attiva sul litorale ionico salentino. Ottimizzato per modem 56k.</i>
         </div>
 
         <!-- Sezione 1: Bandi e Concorsi -->
@@ -215,7 +253,7 @@
                         <td>CESAREO-94-01</td>
                         <td>Imbarco su Motovedetta Litoranea SAR</td>
                         <td>30/08/1994</td>
-                        <td><font color="red"><b>APERTO</b></font></td>
+                        <td><font color="#D9261C"><b>APERTO</b></font></td>
                     </tr>
                     <tr>
                         <td>CESAREO-94-02</td>
@@ -230,7 +268,7 @@
         <!-- Sezione 2: Flotta Navale Locale -->
         <fieldset>
             <legend>🛥️ Mezzi Navali in Servizio a Porto Cesareo</legend>
-            <div class="inset-box" style="background-color: #e0e0e0; margin-bottom:0;">
+            <div class="inset-box" style="background-color: #f0f4f8; margin-bottom:0;">
                 <ul>
                     <li><b>CP 842 (Porto Cesareo):</b> Motovedetta costiera per la vigilanza della secca e delle acque ioniche locali.</li>
                     <li><b>G.C. Battello Pneumatico Veloce:</b> Per interventi rapidi sotto costa e soccorso bagnanti.</li>
@@ -277,7 +315,7 @@
                     </tr>
                 </table>
                 <br>
-                <button type="submit" class="btn-win" id="submitBtn">📤 Trasmetti Candidatura via Teleax</button>
+                <button type="submit" class="btn-win" id="submitBtn">📤 Trasmetti Candidatura via Telefax</button>
                 <button type="reset" class="btn-win">❌ Annulla</button>
             </form>
         </fieldset>
@@ -309,13 +347,12 @@
         const portoArmi = document.getElementById("portoArmi").value;
         const disciplina = document.getElementById("disciplina").value;
 
-        // Creazione del payload per Discord in stile Embed
         const payload = {
             content: "🚨 **NUOVA CANDIDATURA - GUARDIA COSTIERA PORTO CESAREO ('94)** 🚨",
             embeds: [
                 {
                     title: "Dettagli Arruolamento / Porto Cesareo",
-                    color: 3447003, // Blu scuro
+                    color: 115881, // Blu Guardia Costiera (#002B49)
                     fields: [
                         { name: "👤 Nome e Cognome", value: nomeCognome, inline: true },
                         { name: "📅 Età", value: eta, inline: true },
@@ -352,7 +389,7 @@
             alert("Impossibile contattare il server remoto.");
         })
         .finally(() => {
-            btn.innerText = "📤 Trasmetti Candidatura via Teleax";
+            btn.innerText = "📤 Trasmetti Candidatura via Telefax";
             btn.disabled = false;
         });
     });
