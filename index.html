@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
     <style>
-        /* Sfondo marittimo con navi ed elicotteri della Guardia Costiera */
+        /* Sfondo Marittimo con Ancore e Salvagenti */
         body {
             background-color: #001a33;
             background-image: 
-                /* Sagoma Elicottero AW139 Guardia Costiera */
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100'%3E%3Cpath d='M 20 45 L 80 45 L 120 35 L 160 40 L 150 60 L 90 60 L 50 55 Z' fill='rgba(255,255,255,0.03)'/%3E%3Cline x1='10' y1='35' x2='110' y2='35' stroke='rgba(255,255,255,0.05)' stroke-width='3'/%3E%3Cpath d='M 140 40 L 180 20 L 185 25 L 150 48 Z' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E"),
-                /* Sagoma Motovedetta CP Class 300 SAR */
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Cpath d='M 20 140 L 80 140 L 130 110 L 260 110 L 320 135 L 380 135 L 350 160 L 50 160 Z' fill='rgba(255,255,255,0.03)'/%3E%3Cpath d='M 140 110 L 160 75 L 220 75 L 240 110 Z' fill='rgba(255,255,255,0.03)'/%3E%3Cline x1='30' y1='150' x2='370' y2='150' stroke='rgba(217,38,28,0.08)' stroke-width='6'/%3E%3C/svg%3E"),
-                /* Pattern ad onde marine */
+                /* Pattern Salvagente Vettoriale */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='14'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='rgba(217,38,28,0.1)' stroke-width='14' stroke-dasharray='22 33'/%3E%3Ccircle cx='50' cy='50' r='28' fill='none' stroke='rgba(0,43,73,0.2)' stroke-width='2'/%3E%3C/svg%3E"),
+                /* Pattern Ancora Vettoriale */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='25' r='6' fill='none' stroke='rgba(241,171,0,0.08)' stroke-width='3'/%3E%3Cline x1='50' y1='31' x2='50' y2='75' stroke='rgba(241,171,0,0.08)' stroke-width='5'/%3E%3Cline x1='35' y1='45' x2='65' y2='45' stroke='rgba(241,171,0,0.08)' stroke-width='5'/%3E%3Cpath d='M 25 60 C 25 80 75 80 75 60' fill='none' stroke='rgba(241,171,0,0.08)' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E"),
+                /* Sfondo a righe retro */
                 repeating-linear-gradient(-45deg, #001a33 0px, #001a33 30px, #001224 30px, #001224 60px);
-            background-position: 10% 15%, 85% 75%, 0 0;
-            background-repeat: no-repeat, no-repeat, repeat;
+            background-position: 0 0, 60px 60px, 0 0;
+            background-repeat: repeat, repeat, repeat;
             background-attachment: fixed;
             font-family: "MS Sans Serif", Tahoma, sans-serif;
             font-size: 11px;
@@ -36,7 +36,7 @@
             box-shadow: 6px 6px 15px rgba(0,0,0,0.7);
         }
 
-        /* Barra del titolo con gradient Blu/Rosso Guardia Costiera */
+        /* Barra del titolo Guardia Costiera */
         .title-bar {
             background: linear-gradient(90deg, #002B49 0%, #D9261C 100%);
             padding: 5px 8px;
@@ -84,7 +84,7 @@
             background-color: #c0c0c0;
         }
 
-        /* Riquadro interno scavato */
+        /* Riquadri */
         .inset-box {
             background-color: #ffffff;
             border-top: 2px solid #808080;
@@ -184,7 +184,6 @@
             color: #002B49;
         }
 
-        /* Logo Vettoriale */
         .logo-container {
             margin: 5px auto 10px auto;
             width: 130px;
@@ -210,7 +209,7 @@
         <span><u>F</u>ile</span>
         <span><u>Z</u>ona Marittima</span>
         <span><u>B</u>andi</span>
-        <span><u>U</u>niformi</span>
+        <span><u>A</u>rmeria</span>
         <span><u>S</u>occorso</span>
     </div>
 
@@ -220,20 +219,14 @@
         
         <br>
 
-        <!-- Sezione Intro con Logo SVG Generato -->
+        <!-- Sezione Intro con Logo -->
         <div class="inset-box" style="text-align: center; background-color: #f7f9fa;">
-            
-            <!-- LOGO GUARDIA COSTIERA (SVG Vettoriale integrato) -->
             <div class="logo-container">
                 <svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Scudo Esterno Blu -->
                     <path d="M 100 10 L 170 40 L 170 110 C 170 155 100 185 100 185 C 100 185 30 155 30 110 L 30 40 Z" fill="#002B49" stroke="#F1AB00" stroke-width="4"/>
-                    <!-- Bordo Interno Oro -->
                     <path d="M 100 18 L 162 45 L 162 108 C 162 148 100 175 100 175 C 100 175 38 148 38 108 L 38 45 Z" fill="none" stroke="#F1AB00" stroke-width="2"/>
-                    <!-- Banda Rossa Diagonale Tipica Guardia Costiera -->
                     <path d="M 50 40 L 110 40 L 150 160 L 90 160 Z" fill="#D9261C" />
                     <path d="M 115 40 L 125 40 L 165 160 L 155 160 Z" fill="#FFFFFF" />
-                    <!-- Ancora Centrale -->
                     <circle cx="100" cy="70" r="8" fill="none" stroke="#F1AB00" stroke-width="4"/>
                     <line x1="100" y1="78" x2="100" y2="135" stroke="#F1AB00" stroke-width="6"/>
                     <line x1="80" y1="92" x2="120" y2="92" stroke="#F1AB00" stroke-width="6"/>
@@ -277,19 +270,7 @@
             </table>
         </fieldset>
 
-        <!-- Sezione 2: Flotta Navale Locale -->
-        <fieldset>
-            <legend>🛥️ Mezzi Navali ed Aerei in Servizio a Porto Cesareo</legend>
-            <div class="inset-box" style="background-color: #f0f4f8; margin-bottom:0;">
-                <ul>
-                    <li><b>CP 842 (Porto Cesareo):</b> Motovedetta costiera per la vigilanza della secca e delle acque ioniche locali.</li>
-                    <li><b>G.C. Battello Pneumatico Veloce:</b> Per interventi rapidi sotto costa e soccorso bagnanti.</li>
-                    <li><b>Elicottero AW139 (Nemo 11):</b> Supporto aereo per pattugliamento e soccorso a lungo raggio.</li>
-                </ul>
-            </div>
-        </fieldset>
-
-        <!-- Sezione 3: Modulo Candidatura -->
+        <!-- Sezione 2: Modulo Candidatura -->
         <fieldset>
             <legend>📝 Modulo Candidatura / Arruolamento - Porto Cesareo</legend>
             <form id="candidaturaForm">
@@ -333,6 +314,52 @@
             </form>
         </fieldset>
 
+        <!-- SEZIONE NUOVA: ASSUNTI - RIFORNIMENTO ARMAMENTO -->
+        <fieldset style="border-color: #D9261C;">
+            <legend style="color: #D9261C;">🎖️ SEZIONE ASSUNTI - Modulo Richiesta Rifornimento Armamento</legend>
+            <form id="rifornimentoForm">
+                <table border="0" style="border:none;">
+                    <tr>
+                        <td style="border:none; width:25%;"><b>Nome Cognome Militare:</b></td>
+                        <td style="border:none; width:75%;"><input type="text" id="militareNome" placeholder="Es. Sottufficiale Giuseppe Verde" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Grado / Matricola:</b></td>
+                        <td style="border:none;"><input type="text" id="matricola" placeholder="Es. GC-94821" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Tipologia Rifornimento:</b></td>
+                        <td style="border:none;">
+                            <select id="tipoRifornimento" required>
+                                <option value="Opzione 1: Munizione (Caricatori di Riserva 9x19mm)">Opzione 1: Munizione (Caricatori 9x19mm PARABELLUM)</option>
+                                <option value="Opzione 2: Pistola (Sostituzione/Assegnazione Arma di Ordinanza)">Opzione 2: Pistola (Pistola d'Ordinanza Beretta 92FS / APX)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Motivo del Rifornimento:</b></td>
+                        <td style="border:none;">
+                            <select id="motivoRifornimento" required>
+                                <option value="Esaurimento munizioni in esercitazione/pattugliamento">Esaurimento munizioni in esercitazione/pattugliamento</option>
+                                <option value="Danneggiamento / Malfunzionamento equipaggiamento">Danneggiamento / Malfunzionamento equipaggiamento</option>
+                                <option value="Nuovo imbarco / Turno di guardia straordinario">Nuovo imbarco / Turno di guardia straordinario</option>
+                                <option value="Integrazione dotazione per servizio di Pubblica Sicurezza">Integrazione dotazione per servizio di Pubblica Sicurezza</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;" colspan="2">
+                            <br><b>Dettagli Aggiuntivi / Note Operative:</b><br>
+                            <textarea id="noteRifornimento" rows="2" placeholder="Inserisci eventuali dettagli aggiuntivi sulla richiesta..."></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" class="btn-win" id="submitArmiBtn" style="color: #D9261C;">🔫 Richiedi Rifornimento Armeria</button>
+                <button type="reset" class="btn-win">❌ Annulla</button>
+            </form>
+        </fieldset>
+
     </div>
 
     <!-- Barra di Stato -->
@@ -342,59 +369,77 @@
     </div>
 </div>
 
-<!-- Script per inviare i dati al Webhook Discord -->
+<!-- Script Webhook Discord -->
 <script>
     const webhookURL = "https://discord.com/api/webhooks/1538187596004593736/TgLbwTwNDrbbp10iBPgm4Hle-w6_i4R8WAI6vQDYitQdQPohhj3ta48M920-_4o5Dg8X";
 
+    // Gestione Candidatura
     document.getElementById("candidaturaForm").addEventListener("submit", function(e) {
         e.preventDefault();
-
         const btn = document.getElementById("submitBtn");
         btn.innerText = "Invio in corso via modem...";
         btn.disabled = true;
 
-        const nomeCognome = document.getElementById("nomeCognome").value;
-        const eta = document.getElementById("eta").value;
-        const titoloStudio = document.getElementById("titoloStudio").value;
-        const esperienze = document.getElementById("esperienze").value || "Nessuna esperienza specificata.";
-        const portoArmi = document.getElementById("portoArmi").value;
-        const disciplina = document.getElementById("disciplina").value;
-
         const payload = {
             content: "🚨 **NUOVA CANDIDATURA - GUARDIA COSTIERA PORTO CESAREO ('94)** 🚨",
-            embeds: [
-                {
-                    title: "Dettagli Arruolamento / Porto Cesareo",
-                    color: 115881,
-                    fields: [
-                        { name: "👤 Nome e Cognome", value: nomeCognome, inline: true },
-                        { name: "📅 Età", value: eta, inline: true },
-                        { name: "🎓 Titolo di Studio", value: titoloStudio, inline: false },
-                        { name: "📜 Esperienze", value: esperienze, inline: false },
-                        { name: "🔫 Porto d'armi", value: portoArmi, inline: true },
-                        { name: "🛡️ Serietà, Disciplina e Teamwork", value: disciplina, inline: false }
-                    ],
-                    footer: {
-                        text: "Ufficio Locale Marittimo Porto Cesareo - Anno 1994"
-                    },
-                    timestamp: new Date().toISOString()
-                }
-            ]
+            embeds: [{
+                title: "Dettagli Arruolamento / Porto Cesareo",
+                color: 115881,
+                fields: [
+                    { name: "👤 Nome e Cognome", value: document.getElementById("nomeCognome").value, inline: true },
+                    { name: "📅 Età", value: document.getElementById("eta").value, inline: true },
+                    { name: "🎓 Titolo di Studio", value: document.getElementById("titoloStudio").value, inline: false },
+                    { name: "📜 Esperienze", value: document.getElementById("esperienze").value || "Nessuna.", inline: false },
+                    { name: "🔫 Porto d'armi", value: document.getElementById("portoArmi").value, inline: true },
+                    { name: "🛡️ Serietà e Teamwork", value: document.getElementById("disciplina").value, inline: false }
+                ],
+                footer: { text: "Ufficio Locale Marittimo Porto Cesareo - Anno 1994" },
+                timestamp: new Date().toISOString()
+            }]
         };
 
+        inviaWebhook(payload, btn, "📤 Trasmetti Candidatura via Telefax", "Candidatura inoltrata con successo!");
+    });
+
+    // Gestione Rifornimento Armamento Assunti
+    document.getElementById("rifornimentoForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const btn = document.getElementById("submitArmiBtn");
+        btn.innerText = "Trasmissione autorizzazione armeria...";
+        btn.disabled = true;
+
+        const payload = {
+            content: "🔫 **RICHIESTA RIFORNIMENTO ARMAMENTO - SEZIONE ASSUNTI** 🔫",
+            embeds: [{
+                title: "Richiesta Materiale Armeria / Guardia Costiera",
+                color: 14231068, // Rosso
+                fields: [
+                    { name: "🎖️ Militare Richiedente", value: document.getElementById("militareNome").value, inline: true },
+                    { name: "🪪 Grado / Matricola", value: document.getElementById("matricola").value, inline: true },
+                    { name: "📦 Rifornimento Richiesto", value: document.getElementById("tipoRifornimento").value, inline: false },
+                    { name: "📋 Motivo del Rifornimento", value: document.getElementById("motivoRifornimento").value, inline: false },
+                    { name: "📝 Note Operative", value: document.getElementById("noteRifornimento").value || "Nessuna nota specificata.", inline: false }
+                ],
+                footer: { text: "Comando Armeria - Ufficio Locale Marittimo Porto Cesareo" },
+                timestamp: new Date().toISOString()
+            }]
+        };
+
+        inviaWebhook(payload, btn, "🔫 Richiedi Rifornimento Armeria", "Richiesta di rifornimento armamento trasmessa all'Armeria!");
+    });
+
+    function inviaWebhook(payload, btn, testoOriginale, messaggioSuccesso) {
         fetch(webhookURL, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
         })
         .then(response => {
             if (response.ok) {
-                alert("Trasmissione completata con successo! La candidatura è stata inoltrata al Comando di Porto Cesareo su Discord.");
-                document.getElementById("candidaturaForm").reset();
+                alert(messaggioSuccesso);
+                btn.form.reset();
             } else {
-                alert("Errore durante la trasmissione dati via linea analogica. Riprovare.");
+                alert("Errore nella trasmissione dati via modem analogico.");
             }
         })
         .catch(error => {
@@ -402,10 +447,10 @@
             alert("Impossibile contattare il server remoto.");
         })
         .finally(() => {
-            btn.innerText = "📤 Trasmetti Candidatura via Telefax";
+            btn.innerText = testoOriginale;
             btn.disabled = false;
         });
-    });
+    }
 </script>
 
 </body>
