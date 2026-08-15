@@ -4,40 +4,49 @@
     <meta charset="UTF-8">
     <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
     <style>
-        /* Sfondo a tema marittimo Guardia Costiera */
+        /* Sfondo marittimo con navi ed elicotteri della Guardia Costiera */
         body {
-            background-color: #001f3f;
+            background-color: #001a33;
             background-image: 
-                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
-                repeating-linear-gradient(-45deg, #001f3f 0px, #001f3f 20px, #00152b 20px, #00152b 40px);
+                /* Sagoma Elicottero AW139 Guardia Costiera */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100'%3E%3Cpath d='M 20 45 L 80 45 L 120 35 L 160 40 L 150 60 L 90 60 L 50 55 Z' fill='rgba(255,255,255,0.03)'/%3E%3Cline x1='10' y1='35' x2='110' y2='35' stroke='rgba(255,255,255,0.05)' stroke-width='3'/%3E%3Cpath d='M 140 40 L 180 20 L 185 25 L 150 48 Z' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E"),
+                /* Sagoma Motovedetta CP Class 300 SAR */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Cpath d='M 20 140 L 80 140 L 130 110 L 260 110 L 320 135 L 380 135 L 350 160 L 50 160 Z' fill='rgba(255,255,255,0.03)'/%3E%3Cpath d='M 140 110 L 160 75 L 220 75 L 240 110 Z' fill='rgba(255,255,255,0.03)'/%3E%3Cline x1='30' y1='150' x2='370' y2='150' stroke='rgba(217,38,28,0.08)' stroke-width='6'/%3E%3C/svg%3E"),
+                /* Pattern ad onde marine */
+                repeating-linear-gradient(-45deg, #001a33 0px, #001a33 30px, #001224 30px, #001224 60px);
+            background-position: 10% 15%, 85% 75%, 0 0;
+            background-repeat: no-repeat, no-repeat, repeat;
+            background-attachment: fixed;
             font-family: "MS Sans Serif", Tahoma, sans-serif;
             font-size: 11px;
-            margin: 10px;
+            margin: 15px;
         }
 
-        /* Finestra Stile Windows 95 con bordi stile Guardia Costiera */
+        /* Finestra Stile Windows 95 - Dimensione Ingrandita (1100px) */
         .window {
             background-color: #c0c0c0;
             border-top: 2px solid #ffffff;
             border-left: 2px solid #ffffff;
             border-right: 2px solid #000000;
             border-bottom: 2px solid #000000;
-            width: 820px;
+            width: 1100px;
+            max-width: 95%;
             margin: 0 auto;
             padding: 2px;
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.6);
+            box-shadow: 6px 6px 15px rgba(0,0,0,0.7);
         }
 
-        /* Barra del titolo con gradient Blu Guardia Costiera */
+        /* Barra del titolo con gradient Blu/Rosso Guardia Costiera */
         .title-bar {
             background: linear-gradient(90deg, #002B49 0%, #D9261C 100%);
-            padding: 4px;
+            padding: 5px 8px;
             color: white;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
             letter-spacing: 0.5px;
+            font-size: 12px;
         }
 
         .title-btn {
@@ -58,12 +67,12 @@
 
         .menu-bar {
             background-color: #c0c0c0;
-            padding: 2px 5px;
+            padding: 3px 8px;
             border-bottom: 1px solid #808080;
         }
 
         .menu-bar span {
-            margin-right: 10px;
+            margin-right: 15px;
             text-decoration: underline;
             cursor: pointer;
             color: #002B49;
@@ -71,7 +80,7 @@
         }
 
         .content {
-            padding: 10px;
+            padding: 12px;
             background-color: #c0c0c0;
         }
 
@@ -82,15 +91,15 @@
             border-left: 2px solid #808080;
             border-right: 2px solid #ffffff;
             border-bottom: 2px solid #ffffff;
-            padding: 8px;
-            margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 12px;
         }
 
-        /* Form e Pulsanti */
+        /* Form e Fieldset */
         fieldset {
             border: 2px groove #002B49;
-            margin-bottom: 10px;
-            padding: 8px;
+            margin-bottom: 12px;
+            padding: 10px;
             background-color: #d4d0c8;
         }
 
@@ -98,7 +107,8 @@
             font-weight: bold;
             color: #002B49;
             background-color: #c0c0c0;
-            padding: 0 4px;
+            padding: 0 6px;
+            font-size: 12px;
         }
 
         input[type="text"], select, textarea {
@@ -108,8 +118,8 @@
             border-bottom: 2px solid #ffffff;
             background-color: #fff;
             font-family: "Courier New", monospace;
-            font-size: 11px;
-            padding: 2px;
+            font-size: 12px;
+            padding: 3px;
             width: 100%;
             box-sizing: border-box;
         }
@@ -120,10 +130,11 @@
             border-left: 2px solid #ffffff;
             border-right: 2px solid #000000;
             border-bottom: 2px solid #000000;
-            padding: 4px 12px;
+            padding: 5px 15px;
             font-weight: bold;
             color: #002B49;
             cursor: pointer;
+            font-size: 11px;
         }
 
         .btn-win:active {
@@ -142,7 +153,7 @@
 
         th, td {
             border: 1px solid #808080;
-            padding: 4px;
+            padding: 6px;
             text-align: left;
         }
 
@@ -157,26 +168,27 @@
             background-color: #002B49;
             color: #F1AB00;
             font-family: "Courier New", monospace;
-            padding: 3px;
+            padding: 4px;
             font-weight: bold;
             border: 1px solid #000;
+            font-size: 12px;
         }
 
         .status-bar {
             border-top: 2px solid #808080;
-            padding: 2px 5px;
+            padding: 3px 8px;
             background-color: #c0c0c0;
-            font-size: 10px;
+            font-size: 11px;
             display: flex;
             justify-content: space-between;
             color: #002B49;
         }
 
-        /* Contenitore Logo Vettoriale */
+        /* Logo Vettoriale */
         .logo-container {
             margin: 5px auto 10px auto;
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
         }
     </style>
 </head>
@@ -231,7 +243,7 @@
                 </svg>
             </div>
 
-            <h2 style="margin: 0 0 4px 0; font-size: 15px; color: #002B49; text-transform: uppercase;">Ufficio Locale Marittimo - Porto Cesareo</h2>
+            <h2 style="margin: 0 0 4px 0; font-size: 16px; color: #002B49; text-transform: uppercase;">Ufficio Locale Marittimo - Porto Cesareo</h2>
             <b style="color: #D9261C;">Terminal Operativo Locale (S.I.T.) - Anno 1994</b><br>
             <i style="color: #555;">Sede operativa attiva sul litorale ionico salentino. Ottimizzato per modem 56k.</i>
         </div>
@@ -267,11 +279,12 @@
 
         <!-- Sezione 2: Flotta Navale Locale -->
         <fieldset>
-            <legend>🛥️ Mezzi Navali in Servizio a Porto Cesareo</legend>
+            <legend>🛥️ Mezzi Navali ed Aerei in Servizio a Porto Cesareo</legend>
             <div class="inset-box" style="background-color: #f0f4f8; margin-bottom:0;">
                 <ul>
                     <li><b>CP 842 (Porto Cesareo):</b> Motovedetta costiera per la vigilanza della secca e delle acque ioniche locali.</li>
                     <li><b>G.C. Battello Pneumatico Veloce:</b> Per interventi rapidi sotto costa e soccorso bagnanti.</li>
+                    <li><b>Elicottero AW139 (Nemo 11):</b> Supporto aereo per pattugliamento e soccorso a lungo raggio.</li>
                 </ul>
             </div>
         </fieldset>
@@ -282,15 +295,15 @@
             <form id="candidaturaForm">
                 <table border="0" style="border:none;">
                     <tr>
-                        <td style="border:none; width:30%;"><b>Nome Cognome:</b></td>
-                        <td style="border:none; width:70%;"><input type="text" id="nomeCognome" placeholder="Es. Mario Rossi" required></td>
+                        <td style="border:none; width:25%;"><b>Nome Cognome:</b></td>
+                        <td style="border:none; width:75%;"><input type="text" id="nomeCognome" placeholder="Es. Mario Rossi" required></td>
                     </tr>
                     <tr>
                         <td style="border:none;"><b>Età:</b></td>
                         <td style="border:none;"><input type="text" id="eta" placeholder="Es. 25" required></td>
                     </tr>
                     <tr>
-                        <td style="border:none;"><b>Diploma di scuola superiore o titolo equivalente:</b></td>
+                        <td style="border:none;"><b>Diploma o titolo equivalente:</b></td>
                         <td style="border:none;"><input type="text" id="titoloStudio" placeholder="Es. Diploma di Maturità Scientifica" required></td>
                     </tr>
                     <tr>
@@ -352,7 +365,7 @@
             embeds: [
                 {
                     title: "Dettagli Arruolamento / Porto Cesareo",
-                    color: 115881, // Blu Guardia Costiera (#002B49)
+                    color: 115881,
                     fields: [
                         { name: "👤 Nome e Cognome", value: nomeCognome, inline: true },
                         { name: "📅 Età", value: eta, inline: true },
