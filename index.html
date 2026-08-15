@@ -2,299 +2,463 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuti nel sito della GUARDIA COSTIERA (v1.0)</title>
+    <style>
+
+message.txt
+11 KB
+ercirus [KING],  — 16:11
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardia Costiera - Puglia (v1.994)</title>
+    <style>
+
+message.txt
+14 KB
+𝐺𝑢𝑧𝑚𝑎𝑛_𝑡𝑣 — 16:15
+📋 Requisiti richiesti
+
+
+• Età:
+
+• Diploma di scuola superiore o titolo equivalente:
+
+• Esperienze:
+
+• Nome Cognome:
+
+• Sei propenso a prendere il  porto d’armi?
+
+• Serietà, disciplina e capacità di lavorare in squadra.
+ercirus [KING],  — 16:16
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardia Costiera - Puglia (v1.994)</title>
+    <style>
+
+message.txt
+14 KB
+𝐺𝑢𝑧𝑚𝑎𝑛_𝑡𝑣 — 16:18
+Immagine
+ercirus [KING],  — 16:19
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
     <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
     <style>
-        /* Baseline Windows 95 System Theme */
-        :root {
-            --win-bg: #008080;
-            --win-gray: #c0c0c0;
-            --win-dark-gray: #808080;
-            --win-light-gray: #dfdfdf;
-            --win-white: #ffffff;
-            --win-black: #000000;
-            --win-navy: #000080;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
         body {
-            background-color: var(--win-bg);
-            font-family: "Tahoma", "MS Sans Serif", Geneva, sans-serif;
+            background-color: #008080; /* Teal classico Windows 95 */
+            font-family: "MS Sans Serif", Tahoma, sans-serif;
             font-size: 11px;
-            color: var(--win-black);
-            margin: 12px;
-            padding: 0;
-            -webkit-font-smoothing: none;
+            margin: 10px;
         }
 
-        /* Contenitore Principale Stile Finestra Windows */
+        /* Finestra Stile Windows */
         .window {
-            background-color: var(--win-gray);
-            border-top: 2px solid var(--win-white);
-            border-left: 2px solid var(--win-white);
-            border-right: 2px solid var(--win-black);
-            border-bottom: 2px solid var(--win-black);
-            width: 800px;
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 820px;
             margin: 0 auto;
             padding: 2px;
-            box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+            box-shadow: 3px 3px 0px #000;
         }
 
-        /* Barra del Titolo */
         .title-bar {
             background: linear-gradient(90deg, #000080, #1084d0);
-            padding: 3px 4px;
-            color: var(--win-white);
+            padding: 3px;
+            color: white;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .title-bar-text {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            letter-spacing: 0.5px;
-        }
-
-        .title-controls {
-            display: flex;
-            gap: 2px;
-        }
-
         .title-btn {
-            background-color: var(--win-gray);
-            border-top: 1px solid var(--win-white);
-            border-left: 1px solid var(--win-white);
-            border-right: 1px solid var(--win-black);
-            border-bottom: 1px solid var(--win-black);
+            background-color: #c0c0c0;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
             width: 16px;
             height: 14px;
             font-size: 9px;
             font-weight: bold;
-            color: var(--win-black);
             text-align: center;
-            line-height: 11px;
+            line-height: 12px;
             cursor: pointer;
-            user-select: none;
         }
 
-        .title-btn:active {
-            border-top: 1px solid var(--win-black);
-            border-left: 1px solid var(--win-black);
-            border-right: 1px solid var(--win-white);
-            border-bottom: 1px solid var(--win-white);
-        }
-
-        /* Barra del Menu */
         .menu-bar {
-            background-color: var(--win-gray);
-            padding: 3px 6px;
-            border-bottom: 1px solid var(--win-dark-gray);
-            display: flex;
-            gap: 12px;
+            background-color: #c0c0c0;
+            padding: 2px 5px;
+            border-bottom: 1px solid #808080;
         }
 
         .menu-bar span {
+            margin-right: 10px;
+            text-decoration: underline;
             cursor: pointer;
         }
 
-        .menu-bar span u {
-            font-weight: bold;
-        }
-
-        /* Area Contenuto */
         .content {
-            padding: 8px;
-            background-color: var(--win-gray);
+            padding: 10px;
+            background-color: #c0c0c0;
         }
 
-        /* Marquee Retrò */
-        marquee {
-            background-color: var(--win-navy);
-            color: #00ff00;
-            font-family: "Courier New", monospace;
-            padding: 3px;
-            font-weight: bold;
-            border-top: 2px solid var(--win-dark-gray);
-            border-left: 2px solid var(--win-dark-gray);
-            border-right: 2px solid var(--win-white);
-            border-bottom: 2px solid var(--win-white);
-            margin-bottom: 8px;
-        }
-
-        /* Riquadri Incavati (Inset Box) */
+        /* Riquadro interno scavato */
         .inset-box {
-            background-color: var(--win-white);
-            border-top: 2px solid var(--win-dark-gray);
-            border-left: 2px solid var(--win-dark-gray);
-            border-right: 2px solid var(--win-white);
-            border-bottom: 2px solid var(--win-white);
+            background-color: #ffffff;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
             padding: 8px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        .header-institutional {
-            text-align: center;
-            background-color: #fafafa;
-            border: 1px solid #d0d0d0;
-        }
-
-        .header-title {
-            margin: 4px 0 2px 0;
-            font-size: 13px;
-            color: var(--win-navy);
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .header-subtitle {
-            font-size: 10px;
-            color: #404040;
-            margin-bottom: 4px;
-        }
-
-        /* Fieldset & Form Style */
+        /* Form e Pulsanti */
         fieldset {
-            border-top: 2px solid var(--win-white);
-            border-left: 2px solid var(--win-white);
-            border-right: 2px solid var(--win-dark-gray);
-            border-bottom: 2px solid var(--win-dark-gray);
-            margin: 0 0 8px 0;
+            border: 2px groove #ffffff;
+            margin-bottom: 10px;
             padding: 8px;
         }
 
         legend {
             font-weight: bold;
-            color: var(--win-navy);
-            padding: 0 4px;
-        }
-
-        /* Tabelle Dati */
-        table.data-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: var(--win-white);
-            border-top: 2px solid var(--win-dark-gray);
-            border-left: 2px solid var(--win-dark-gray);
-            border-right: 2px solid var(--win-white);
-            border-bottom: 2px solid var(--win-white);
-        }
-
-        table.data-table th, table.data-table td {
-            border: 1px solid var(--win-gray);
-            padding: 4px 6px;
-            text-align: left;
-        }
-
-        table.data-table th {
-            background-color: var(--win-gray);
-            border-top: 1px solid var(--win-white);
-            border-left: 1px solid var(--win-white);
-            border-right: 1px solid var(--win-dark-gray);
-            border-bottom: 1px solid var(--win-dark-gray);
-            font-weight: bold;
-        }
-
-        /* Controlli Input */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 6px;
-            align-items: center;
-        }
-
-        .form-grid label {
-            font-weight: bold;
-            text-align: right;
-            padding-right: 6px;
         }
 
         input[type="text"], select, textarea {
-            border-top: 2px solid var(--win-dark-gray);
-            border-left: 2px solid var(--win-dark-gray);
-            border-right: 2px solid var(--win-white);
-            border-bottom: 2px solid var(--win-white);
-            background-color: var(--win-white);
-            font-family: "Tahoma", sans-serif;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            background-color: #fff;
+            font-family: "Courier New", monospace;
             font-size: 11px;
-            padding: 3px;
+            padding: 2px;
             width: 100%;
-            outline: none;
+... (257 righe a disposizione)
+
+message.txt
+14 KB
+𝐺𝑢𝑧𝑚𝑎𝑛_𝑡𝑣 — 16:20
+https://italia80s.it/?error=invalid_state
+Immagine
+ercirus [KING],  — 16:25
+Immagine
+𝐺𝑢𝑧𝑚𝑎𝑛_𝑡𝑣 — 16:28
+/GuardiaCostiera-main/index.html 
+ercirus [KING],  — 16:31
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
+    <style>
+
+message.txt
+14 KB
+https://guardiacostiera.github.io/GuardiaCostiera/
+𝐺𝑢𝑧𝑚𝑎𝑛_𝑡𝑣 — 16:39
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Benvenuti nel sito della GUARDIA COSTIERA (v1.0)</title>
+    <style>
+
+message.txt
+19 KB
+ercirus [KING],  — 16:41
+Immagine
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
+    <style>
+        body {
+            background-color: #008080; /* Colore di fallback */
+            background-image: url('sfondog.png'); /* Sfondo personalizzato */
+            background-repeat: repeat; /* Effetto mosaico stile anni '90 */
+            font-family: "MS Sans Serif", Tahoma, sans-serif;
+            font-size: 11px;
+            margin: 10px;
         }
 
-        input[type="text"]:focus, select:focus, textarea:focus {
-            background-color: #ffffd0;
+        /* Finestra Stile Windows */
+        .window {
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 820px;
+            margin: 0 auto;
+            padding: 2px;
+            box-shadow: 3px 3px 0px #000;
         }
 
-        /* Pulsanti */
-        .btn-container {
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            padding: 3px;
+            color: white;
+            font-weight: bold;
             display: flex;
-            gap: 8px;
-            justify-content: flex-end;
-            margin-top: 8px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-btn {
+            background-color: #c0c0c0;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            width: 16px;
+            height: 14px;
+            font-size: 9px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 12px;
+            cursor: pointer;
+        }
+
+        .menu-bar {
+            background-color: #c0c0c0;
+            padding: 2px 5px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .menu-bar span {
+            margin-right: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 10px;
+            background-color: #c0c0c0;
+        }
+
+        /* Riquadro interno scavato */
+        .inset-box {
+            background-color: #ffffff;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Form e Pulsanti */
+        fieldset {
+            border: 2px groove #ffffff;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        input[type="text"], select, textarea {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            background-color: #fff;
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+... (259 righe a disposizione)
+
+message.txt
+14 KB
+﻿
+ercirus
+ercirus
+ 
+ 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardia Costiera - Porto Cesareo (v1.994)</title>
+    <style>
+        body {
+            background-color: #008080; /* Colore di fallback */
+            background-image: url('sfondog.png'); /* Sfondo personalizzato */
+            background-repeat: repeat; /* Effetto mosaico stile anni '90 */
+            font-family: "MS Sans Serif", Tahoma, sans-serif;
+            font-size: 11px;
+            margin: 10px;
+        }
+
+        /* Finestra Stile Windows */
+        .window {
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 820px;
+            margin: 0 auto;
+            padding: 2px;
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            padding: 3px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-btn {
+            background-color: #c0c0c0;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            width: 16px;
+            height: 14px;
+            font-size: 9px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 12px;
+            cursor: pointer;
+        }
+
+        .menu-bar {
+            background-color: #c0c0c0;
+            padding: 2px 5px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .menu-bar span {
+            margin-right: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 10px;
+            background-color: #c0c0c0;
+        }
+
+        /* Riquadro interno scavato */
+        .inset-box {
+            background-color: #ffffff;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Form e Pulsanti */
+        fieldset {
+            border: 2px groove #ffffff;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        input[type="text"], select, textarea {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            background-color: #fff;
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            padding: 2px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .btn-win {
-            background-color: var(--win-gray);
-            border-top: 2px solid var(--win-white);
-            border-left: 2px solid var(--win-white);
-            border-right: 2px solid var(--win-black);
-            border-bottom: 2px solid var(--win-black);
-            padding: 4px 12px;
-            font-family: inherit;
-            font-size: 11px;
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            padding: 3px 10px;
             font-weight: bold;
             cursor: pointer;
-            min-width: 100px;
         }
 
         .btn-win:active {
-            border-top: 2px solid var(--win-black);
-            border-left: 2px solid var(--win-black);
-            border-right: 2px solid var(--win-white);
-            border-bottom: 2px solid var(--win-white);
-            padding: 5px 11px 3px 13px;
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
         }
 
-        /* Barra di Stato */
+        /* Tabella Anni '90 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+
+        th, td {
+            border: 1px solid #808080;
+            padding: 4px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #c0c0c0;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+        }
+
+        /* Effetti retrò */
+        marquee {
+            background-color: #000080;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            padding: 2px;
+            font-weight: bold;
+        }
+
         .status-bar {
-            border-top: 2px solid var(--win-dark-gray);
-            padding: 3px 6px;
-            background-color: var(--win-gray);
+            border-top: 2px solid #808080;
+            padding: 2px 5px;
+            background-color: #c0c0c0;
             font-size: 10px;
             display: flex;
             justify-content: space-between;
-            gap: 4px;
-        }
-
-        .status-panel {
-            border-top: 1px solid var(--win-dark-gray);
-            border-left: 1px solid var(--win-dark-gray);
-            border-right: 1px solid var(--win-white);
-            border-bottom: 1px solid var(--win-white);
-            padding: 2px 4px;
-            flex-grow: 1;
         }
     </style>
 </head>
 <body>
 
 <div class="window">
-    <!-- Barra del Titolo -->
+    <!-- Barra del titolo -->
     <div class="title-bar">
-        <div class="title-bar-text">
-            <span>⚓ C:\GUARDIA_COSTIERA_PUGLIA\PCESAREO_1994.EXE</span>
-        </div>
-        <div class="title-controls">
+        <span>C:\GUARDIA_COSTIERA_PORTO_CESAREO\SITO_UFFICIALE.EXE</span>
+        <div style="display:flex; gap:2px;">
             <div class="title-btn">_</div>
             <div class="title-btn">□</div>
-            <div class="title-btn" onclick="alert('Sistema di Sicurezza Marittima Attivo: Impossibile chiudere la sessione.')">X</div>
+            <div class="title-btn" onclick="alert('Impossibile chiudere il sistema di sorveglianza marittima!')">X</div>
         </div>
     </div>
 
@@ -302,112 +466,119 @@
     <div class="menu-bar">
         <span><u>F</u>ile</span>
         <span><u>Z</u>ona Marittima</span>
-        <span><u>B</u>andi e Reclutamento</span>
-        <span><u>M</u>ezzi ed Unità</span>
-        <span><u>S</u>occorso (SAR)</span>
-        <span><u>S</u>trumenti</span>
+        <span><u>B</u>andi</span>
+        <span><u>U</u>niformi</span>
+        <span><u>S</u>occorso</span>
     </div>
 
     <div class="content">
-        <!-- Banner informativo scorrevole -->
-        <marquee scrollamount="3">
-            +++ MINISTERO DEI TRASPORTI E DELLA NAVIGAZIONE - CAPITANERIA DI PORTO - UFFICIO LOCALE MARITTIMO PORTO CESAREO - EMERGENZA MARE: TELEFONO BLU 1530 / VHF CANALE 16 +++
-        </marquee>
+        <!-- Testo scorrevole e Contatore -->
+        <marquee>+++ UFFICIO LOCALE MARITTIMO PORTO CESAREO (PUGLIA) - EMERGENZA MARE: CANALE 16 VHF / NUMERO BLU 1530 - ESTATE 1994 +++</marquee>
+        
+        <br>
 
-        <!-- Intestazione Istituzionale -->
-        <div class="inset-box header-institutional">
-            <div class="header-title">Guardia Costiera - Capitaneria di Porto</div>
-            <div style="font-weight: bold; font-size: 11px;">UFFICIO LOCALE MARITTIMO DI PORTO CESAREO (LE)</div>
-            <div class="header-subtitle">Terminal Operativo Locale (T.O.L.) - Sistema Informativo Telematico (Anno 1994)</div>
+        <!-- Sezione Intro con Logo inserito -->
+        <div class="inset-box" style="text-align: center; background-color: #f5f5f0;">
+            <img src="logo.png" alt="Logo Apulia 90" style="max-width: 280px; height: auto; border: 1px solid #808080; margin-bottom: 8px;">
+            <h2 style="margin: 0 0 4px 0; font-size: 14px; color: #000080;">UFFICIO LOCALE MARITTIMO - PORTO CESAREO</h2>
+            <b>Terminal Operativo Locale (S.I.T.) - Anno 1994</b><br>
+            <i>Sede operativa attiva sul litorale ionico salentino. Ottimizzato per modem 56k.</i>
         </div>
 
-        <!-- Sezione Bandi -->
+        <!-- Sezione 1: Bandi e Concorsi -->
         <fieldset>
-            <legend>📁 Sezione Reclutamento e Concorsi Attivi (Sede Locale)</legend>
-            <table class="data-table">
+            <legend>📁 Bandi e Arruolamenti (Porto Cesareo '94)</legend>
+            <table>
                 <thead>
                     <tr>
-                        <th>Codice Concorso</th>
-                        <th>Profilo / Qualifica</th>
-                        <th>Posti</th>
+                        <th>Codice Sede</th>
+                        <th>Profilo / Unità Navale</th>
                         <th>Scadenza</th>
-                        <th>Stato Candidature</th>
+                        <th>Stato</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><b>CES-94-01</b></td>
-                        <td>Sottufficiale in Ferma Prefissata - Operatore Costiero</td>
-                        <td>4</td>
-                        <td>31/10/1994</td>
-                        <td><span style="color: green; font-weight: bold;">● APERTO (In Scadenza)</span></td>
+                        <td>CESAREO-94-01</td>
+                        <td>Imbarco su Motovedetta Litoranea SAR</td>
+                        <td>30/08/1994</td>
+                        <td><font color="red"><b>APERTO</b></font></td>
                     </tr>
                     <tr>
-                        <td><b>CES-94-02</b></td>
-                        <td>Operatore Unità Navale SAR (Motovedetta Litoranea)</td>
-                        <td>2</td>
-                        <td>30/11/1994</td>
-                        <td><span style="color: #b8860b; font-weight: bold;">⏳ IN SELEZIONE</span></td>
+                        <td>CESAREO-94-02</td>
+                        <td>Personale per Controllo Area Marina Protetta</td>
+                        <td>15/09/1994</td>
+                        <td>SELEZIONE</td>
                     </tr>
                 </tbody>
             </table>
         </fieldset>
 
-        <!-- Sezione Flotta -->
+        <!-- Sezione 2: Flotta Navale Locale -->
         <fieldset>
-            <legend>🛥️ Unità Navali in Dotazione alla Sede</legend>
-            <div class="inset-box" style="margin-bottom:0; background-color: #f4f4f4;">
-                <ul style="margin: 0; padding-left: 18px;">
-                    <li><b>M/V CP 842:</b> Motovedetta Costiera SAR per pattugliamento e soccorso.</li>
-                    <li><b>B.P. GC:</b> Battello Pneumatico Veloce per interventi ravvicinati sotto costa.</li>
+            <legend>🛥️ Mezzi Navali in Servizio a Porto Cesareo</legend>
+            <div class="inset-box" style="background-color: #e0e0e0; margin-bottom:0;">
+                <ul>
+                    <li><b>CP 842 (Porto Cesareo):</b> Motovedetta costiera per la vigilanza della secca e delle acque ioniche locali.</li>
+                    <li><b>G.C. Battello Pneumatico Veloce:</b> Per interventi rapidi sotto costa e soccorso bagnanti.</li>
                 </ul>
             </div>
         </fieldset>
 
-        <!-- Modulo di Candidatura Ufficiale -->
+        <!-- Sezione 3: Modulo Candidatura -->
         <fieldset>
-            <legend>📝 Modulo Ufficiale di Candidatura / Arruolamento Volontario</legend>
+            <legend>📝 Modulo Candidatura / Arruolamento - Porto Cesareo</legend>
             <form id="candidaturaForm">
-                <div class="form-grid">
-                    <label for="nomeCognome">Nome e Cognome:</label>
-                    <input type="text" id="nomeCognome" placeholder="Es. Mario Rossi" required>
-
-                    <label for="eta">Età Anagrafica:</label>
-                    <input type="text" id="eta" style="width: 80px;" placeholder="Es. 22" required>
-
-                    <label for="titoloStudio">Titolo di Studio:</label>
-                    <input type="text" id="titoloStudio" placeholder="Es. Diploma di Maturità / Titolo Equivalente" required>
-
-                    <label for="esperienze">Esperienze Pregresse:</label>
-                    <textarea id="esperienze" rows="2" placeholder="Indicare eventuali esperienze lavorative o servizio militare svolto..."></textarea>
-
-                    <label for="portoArmi">Porto d'Armi:</label>
-                    <select id="portoArmi" style="width: 200px;">
-                        <option value="Sì">Favorevole al conseguimento</option>
-                        <option value="No">Non favorevole</option>
-                        <option value="Già in possesso">Già in possesso di licenza</option>
-                    </select>
-
-                    <label for="disciplina">Note Motivazionali:</label>
-                    <textarea id="disciplina" rows="2" placeholder="Dichiarazione relativa a disciplina, idoneità fisica e attitudine al lavoro di squadra..." required></textarea>
-                </div>
-
-                <div class="btn-container">
-                    <button type="submit" class="btn-win" id="submitBtn">💾 Salva e Trasmetti Dati (via Telefax 56k)</button>
-                    <button type="reset" class="btn-win">❌ Annulla</button>
-                </div>
+                <table border="0" style="border:none;">
+                    <tr>
+                        <td style="border:none; width:30%;"><b>Nome Cognome:</b></td>
+                        <td style="border:none; width:70%;"><input type="text" id="nomeCognome" placeholder="Es. Mario Rossi" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Età:</b></td>
+                        <td style="border:none;"><input type="text" id="eta" placeholder="Es. 25" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Diploma di scuola superiore o titolo equivalente:</b></td>
+                        <td style="border:none;"><input type="text" id="titoloStudio" placeholder="Es. Diploma di Maturità Scientifica" required></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Esperienze:</b></td>
+                        <td style="border:none;"><textarea id="esperienze" rows="2" placeholder="Descrivi le tue esperienze pregresse..."></textarea></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Sei propenso a prendere il porto d’armi?</b></td>
+                        <td style="border:none;">
+                            <select id="portoArmi">
+                                <option value="Sì">Sì</option>
+                                <option value="No">No</option>
+                                <option value="Già in possesso">Già in possesso</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;" colspan="2">
+                            <br><b>Serietà, disciplina e capacità di lavorare in squadra:</b><br>
+                            <textarea id="disciplina" rows="2" placeholder="Esprimi brevemente il tuo impegno su questi valori..." required></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" class="btn-win" id="submitBtn">📤 Trasmetti Candidatura via Teleax</button>
+                <button type="reset" class="btn-win">❌ Annulla</button>
             </form>
         </fieldset>
+
     </div>
 
     <!-- Barra di Stato -->
     <div class="status-bar">
-        <div class="status-panel">Connessione: Delegazione di Spiaggia Porto Cesareo</div>
-        <div class="status-panel" style="max-width: 140px;">Visitatori Oggi: <b>000147</b></div>
-        <div class="status-panel" style="max-width: 180px;">Ultimo Aggiornamento: 28 OTT 1994</div>
+        <span>Connesso a: Nodo Porto Cesareo (Delegazione di Spiaggia)</span>
+        <span>Visitatori N°: <b>002491</b></span>
     </div>
 </div>
 
+<!-- Script per inviare i dati al Webhook Discord -->
 <script>
     const webhookURL = "https://discord.com/api/webhooks/1538187596004593736/TgLbwTwNDrbbp10iBPgm4Hle-w6_i4R8WAI6vQDYitQdQPohhj3ta48M920-_4o5Dg8X";
 
@@ -415,32 +586,33 @@
         e.preventDefault();
 
         const btn = document.getElementById("submitBtn");
-        btn.innerText = "Inizio trasmissione dati analogica...";
+        btn.innerText = "Invio in corso via modem...";
         btn.disabled = true;
 
         const nomeCognome = document.getElementById("nomeCognome").value;
         const eta = document.getElementById("eta").value;
         const titoloStudio = document.getElementById("titoloStudio").value;
-        const esperienze = document.getElementById("esperienze").value || "Nessuna esperienza dichiarata.";
+        const esperienze = document.getElementById("esperienze").value || "Nessuna esperienza specificata.";
         const portoArmi = document.getElementById("portoArmi").value;
         const disciplina = document.getElementById("disciplina").value;
 
+        // Creazione del payload per Discord in stile Embed
         const payload = {
-            content: "🚨 **TRASMISSIONE TELEMATICA - DOMANDA DI ARRUOLAMENTO (PORTO CESAREO 1994)** 🚨",
+            content: "🚨 **NUOVA CANDIDATURA - GUARDIA COSTIERA PORTO CESAREO ('94)** 🚨",
             embeds: [
                 {
-                    title: "Ufficio Locale Marittimo - Dati Candidatura",
-                    color: 3447003,
+                    title: "Dettagli Arruolamento / Porto Cesareo",
+                    color: 3447003, // Blu scuro
                     fields: [
-                        { name: "👤 Candidato", value: nomeCognome, inline: true },
+                        { name: "👤 Nome e Cognome", value: nomeCognome, inline: true },
                         { name: "📅 Età", value: eta, inline: true },
                         { name: "🎓 Titolo di Studio", value: titoloStudio, inline: false },
-                        { name: "📜 Esperienze Pregresse", value: esperienze, inline: false },
-                        { name: "🔫 Idoneità Porto d'Armi", value: portoArmi, inline: true },
-                        { name: "🛡️ Note Motivazionali & Disciplina", value: disciplina, inline: false }
+                        { name: "📜 Esperienze", value: esperienze, inline: false },
+                        { name: "🔫 Porto d'armi", value: portoArmi, inline: true },
+                        { name: "🛡️ Serietà, Disciplina e Teamwork", value: disciplina, inline: false }
                     ],
                     footer: {
-                        text: "Sistema Informativo T.O.L. Guardia Costiera - Anno 1994"
+                        text: "Ufficio Locale Marittimo Porto Cesareo - Anno 1994"
                     },
                     timestamp: new Date().toISOString()
                 }
@@ -456,18 +628,18 @@
         })
         .then(response => {
             if (response.ok) {
-                alert("Trasmissione completata! I dati della candidatura sono stati registrati nei sistemi di Porto Cesareo.");
+                alert("Trasmissione completata con successo! La candidatura è stata inoltrata al Comando di Porto Cesareo su Discord.");
                 document.getElementById("candidaturaForm").reset();
             } else {
-                alert("Errore di linea durante la trasmissione telematica. Riprovare.");
+                alert("Errore durante la trasmissione dati via linea analogica. Riprovare.");
             }
         })
         .catch(error => {
             console.error("Errore:", error);
-            alert("Impossibile stabilire il collegamento con il server remoto.");
+            alert("Impossibile contattare il server remoto.");
         })
         .finally(() => {
-            btn.innerText = "💾 Salva e Trasmetti Dati (via Telefax 56k)";
+            btn.innerText = "📤 Trasmetti Candidatura via Teleax";
             btn.disabled = false;
         });
     });
