@@ -2,33 +2,84 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Benvenuti nel sito della GUARDIA COSTIERA (v1.0)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUARDIA COSTIERA - Sistema Informativo Telematico (1998)</title>
     <style>
-        body {
-            background-color: #008080; /* Teal classico Windows 95 */
-            font-family: "MS Sans Serif", Tahoma, sans-serif;
-            font-size: 11px;
-            margin: 10px;
+        * {
+            box-sizing: border-box;
         }
 
-        /* Finestra Stile Windows */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
+            font-size: 11px;
+        }
+
+        /* Sfondo principale con la foto del PC Anni '90 */
+        .desktop-bg {
+            background-image: url('retro-computer-technology-with-monitor-hardware_23-2149506836.avif');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: #d1b8a5; /* Colore di sfondo coordinato alla foto */
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Schermo ritagliato esattamente sull'area nera del monitor */
+        .screen-area {
+            position: absolute;
+            top: 24.5%;
+            left: 32.5%;
+            width: 35.2%;
+            height: 38.5%;
+            background-color: #008080; /* Teal Windows 95 */
+            overflow-y: auto;
+            border: 2px solid #1a1a1a;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+            padding: 2px;
+        }
+
+        /* Personalizzazione Scrollbar in stile retrò */
+        .screen-area::-webkit-scrollbar {
+            width: 12px;
+        }
+        .screen-area::-webkit-scrollbar-track {
+            background: #c0c0c0;
+        }
+        .screen-area::-webkit-scrollbar-thumb {
+            background: #c0c0c0;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+        }
+
+        /* Finestra Windows 95/98 */
         .window {
             background-color: #c0c0c0;
             border-top: 2px solid #ffffff;
             border-left: 2px solid #ffffff;
             border-right: 2px solid #000000;
             border-bottom: 2px solid #000000;
-            width: 800px;
-            margin: 0 auto;
             padding: 2px;
-            box-shadow: 3px 3px 0px #000;
+            width: 100%;
         }
 
         .title-bar {
             background: linear-gradient(90deg, #000080, #1084d0);
-            padding: 3px;
+            padding: 2px 4px;
             color: white;
             font-weight: bold;
+            font-size: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,62 +91,112 @@
             border-left: 1px solid #fff;
             border-right: 1px solid #000;
             border-bottom: 1px solid #000;
-            width: 16px;
-            height: 14px;
-            font-size: 9px;
+            width: 14px;
+            height: 12px;
+            font-size: 8px;
             font-weight: bold;
             text-align: center;
-            line-height: 12px;
+            line-height: 10px;
+            color: #000;
             cursor: pointer;
+            margin-left: 2px;
         }
 
         .menu-bar {
             background-color: #c0c0c0;
-            padding: 2px 5px;
+            padding: 2px 4px;
             border-bottom: 1px solid #808080;
+            font-size: 10px;
         }
 
         .menu-bar span {
-            margin-right: 10px;
+            margin-right: 8px;
             text-decoration: underline;
             cursor: pointer;
         }
 
         .content {
-            padding: 10px;
+            padding: 6px;
             background-color: #c0c0c0;
         }
 
-        /* Riquadro interno scavato */
+        .marquee-box {
+            background-color: #000080;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 2px 4px;
+            font-weight: bold;
+            font-size: 9px;
+            border-top: 1px solid #808080;
+            border-left: 1px solid #808080;
+            border-right: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
+            margin-bottom: 6px;
+        }
+
         .inset-box {
             background-color: #ffffff;
             border-top: 2px solid #808080;
             border-left: 2px solid #808080;
             border-right: 2px solid #ffffff;
             border-bottom: 2px solid #ffffff;
-            padding: 8px;
-            margin-bottom: 10px;
+            padding: 6px;
+            margin-bottom: 6px;
         }
 
-        /* Form e Pulsanti */
         fieldset {
             border: 2px groove #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+            padding: 6px;
         }
 
         legend {
             font-weight: bold;
+            color: #000080;
+            padding: 0 2px;
+            font-size: 10px;
         }
 
-        input[type="text"], select, textarea {
-            border-top: 2px solid #808080;
-            border-left: 2px solid #808080;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
-            background-color: #fff;
-            font-family: "Courier New", monospace;
-            font-size: 11px;
+        table.win-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            background-color: #ffffff;
+        }
+
+        table.win-table th, table.win-table td {
+            border: 1px solid #808080;
+            padding: 3px;
+            text-align: left;
+        }
+
+        table.win-table th {
+            background-color: #c0c0c0;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            font-weight: bold;
+        }
+
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .form-table td {
             padding: 2px;
+            font-size: 9px;
+        }
+
+        input[type="text"], select {
+            border-top: 1px solid #808080;
+            border-left: 1px solid #808080;
+            border-right: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
+            background-color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            padding: 2px;
+            width: 95%;
         }
 
         .btn-win {
@@ -104,51 +205,19 @@
             border-left: 2px solid #ffffff;
             border-right: 2px solid #000000;
             border-bottom: 2px solid #000000;
-            padding: 3px 10px;
+            padding: 2px 6px;
             font-weight: bold;
+            font-size: 9px;
             cursor: pointer;
-        }
-
-        .btn-win:active {
-            border-top: 2px solid #000000;
-            border-left: 2px solid #000000;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
-        }
-
-        /* Tabella Anni '90 */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 11px;
-        }
-
-        th, td {
-            border: 1px solid #808080;
-            padding: 4px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #c0c0c0;
-            border-top: 1px solid #fff;
-            border-left: 1px solid #fff;
-        }
-
-        /* Effetti retrò */
-        marquee {
-            background-color: #000080;
-            color: #00ff00;
-            font-family: "Courier New", monospace;
-            padding: 2px;
-            font-weight: bold;
+            display: inline-block;
+            margin-top: 4px;
         }
 
         .status-bar {
-            border-top: 2px solid #808080;
-            padding: 2px 5px;
+            border-top: 1px solid #808080;
+            padding: 2px 4px;
             background-color: #c0c0c0;
-            font-size: 10px;
+            font-size: 8px;
             display: flex;
             justify-content: space-between;
         }
@@ -156,138 +225,127 @@
 </head>
 <body>
 
-<div class="window">
-    <!-- Barra del titolo -->
-    <div class="title-bar">
-        <span>C:\GUARDIA_COSTIERA\SITO_UFFICIALE.EXE</span>
-        <div style="display:flex; gap:2px;">
-            <div class="title-btn">_</div>
-            <div class="title-btn">□</div>
-            <div class="title-btn" onclick="alert('Impossibile chiudere il sistema!')">X</div>
-        </div>
-    </div>
-
-    <!-- Barra Menu -->
-    <div class="menu-bar">
-        <span><u>F</u>ile</span>
-        <span><u>M</u>enu</span>
-        <span><u>B</u>andi</span>
-        <span><u>U</u>niformi</span>
-        <span><u>A</u>uto</span>
-    </div>
-
-    <div class="content">
-        <!-- Testo scorrevole e Contatore -->
-        <marquee>+++ BENAVENUTI NEL SITO UFFICIALE DELLA GUARDIA COSTIERA - EMERGENZA MARE CHIAMA IL 1530 +++</marquee>
-        
-        <br>
-
-        <!-- Sezione Intro -->
-        <div class="inset-box">
-            <table border="0" style="border:none;">
-                <tr>
-                    <td style="border:none; width:60px;">
-                        <font size="6">⚓</font>
-                    </td>
-                    <td style="border:none;">
-                        <h2 style="margin:0; font-size:14px; color:#000080;">CORPO DELLE CAPITANERIE DI PORTO</h2>
-                        <b>Sistema Informativo Telematico (S.I.T.) - Anno 1998</b><br>
-                        <i>Ottimizzato per Netscape Navigator 4.0 e risoluzione 800x600 pixels.</i>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- Sezione 1: Bandi e Concorsi -->
-        <fieldset>
-            <legend>📁 Bandi e Concorsi Attivi</legend>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Codice</th>
-                        <th>Descrizione Bando</th>
-                        <th>Scadenza</th>
-                        <th>Stato</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>BND-1998-01</td>
-                        <td>Reclutamento VFP1 - Settore Navale</td>
-                        <td>15/10/1998</td>
-                        <td><font color="red"><b>IN CORSO</b></font></td>
-                    </tr>
-                    <tr>
-                        <td>BND-1998-02</td>
-                        <td>Concorso Ufficiali Ruolo Normale</td>
-                        <td>30/11/1998</td>
-                        <td>APERTURA</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <button class="btn-win" onclick="alert('Download Bando.pdf in corso via Modem 56k (Tempo stimato: 45 min)...')">
-                💾 Scarica Bando (.TXT)
-            </button>
-        </fieldset>
-
-        <!-- Sezione 2: Uniformi -->
-        <fieldset>
-            <legend>👔 Uniformi di Servizio</legend>
-            <div class="inset-box" style="background-color: #e0e0e0;">
-                <p><b>Regolamento Uniformi e Vestiario (Edizione 1995):</b></p>
-                <ul>
-                    <li><b>Ordinaria Estiva:</b> Giacca e pantaloni bianchi, scarpe bianche, berretto rigido.</li>
-                    <li><b>Ordinaria Invernale:</b> Veste blu notte, panno di lana, gradi dorati sulle maniche.</li>
-                    <li><b>Operativa per Unità Navali:</b> Tuta ignifuga blu mare con distintivo di reparto.</li>
-                </ul>
+<div class="desktop-bg">
+    <!-- Area Schermo CRT -->
+    <div class="screen-area">
+        <div class="window">
+            <!-- Barra del Titolo -->
+            <div class="title-bar">
+                <span>⚓ C:\GUARDIA_COSTIERA\WEB\INDEX.HTM</span>
+                <div style="display: flex;">
+                    <div class="title-btn">_</div>
+                    <div class="title-btn">□</div>
+                    <div class="title-btn" onclick="alert('Sistema attivo!')">X</div>
+                </div>
             </div>
-        </fieldset>
 
-        <!-- Sezione 3: Richiesta Equipaggiamento -->
-        <fieldset>
-            <legend>📝 Modulo Richiesta Equipaggiamento Personale</legend>
-            <form onsubmit="event.preventDefault(); alert('Richiesta inviata al server centrale!');">
-                <table border="0" style="border:none;">
-                    <tr>
-                        <td style="border:none;"><b>Matricola:</b></td>
-                        <td style="border:none;"><input type="text" placeholder="Es. 98-GC-123" required></td>
-                        <td style="border:none;"><b>Grado:</b></td>
-                        <td style="border:none;">
-                            <select>
-                                <option>Sottocapo</option>
-                                <option>Sergente</option>
-                                <option>Maresciallo</option>
-                                <option>Tenente di Vascello</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border:none;"><b>Materiale:</b></td>
-                        <td style="border:none;">
-                            <select>
-                                <option>Gilet Salvagente Auto-gonfiabile</option>
-                                <option>Kit Pronto Soccorso Navale</option>
-                                <option>Binocolo di Navigazione 7x50</option>
-                                <option>Tuta da Lavoro Estiva</option>
-                            </select>
-                        </td>
-                        <td style="border:none;"><b>Quantità:</b></td>
-                        <td style="border:none;"><input type="text" size="3" value="1"></td>
-                    </tr>
-                </table>
-                <br>
-                <button type="submit" class="btn-win">📤 Invia Modulo</button>
-                <button type="reset" class="btn-win">❌ Annulla</button>
-            </form>
-        </fieldset>
+            <!-- Menu Bar -->
+            <div class="menu-bar">
+                <span><u>F</u>ile</span>
+                <span><u>B</u>andi</span>
+                <span><u>U</u>niformi</span>
+                <span><u>E</u>quipaggiamento</span>
+            </div>
 
-    </div>
+            <div class="content">
+                <!-- Testo Scorrevole -->
+                <div class="marquee-box">
+                    <marquee scrollamount="3">+++ GUARDIA COSTIERA - EMERGENZA MARE: 1530 +++ SITO UFFICIALE (1998) +++</marquee>
+                </div>
 
-    <!-- Barra di Stato -->
-    <div class="status-bar">
-        <span>Connesso a: Dial-Up PPP Server (192.168.1.1)</span>
-        <span>Visitatori N°: <b>004291</b></span>
+                <!-- Header Info -->
+                <div class="inset-box">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="width: 30px; text-align: center; font-size: 18px;">⚓</td>
+                            <td style="padding-left: 6px;">
+                                <b style="color: #000080; font-size: 11px;">GUARDIA COSTIERA</b><br>
+                                <span style="font-size: 9px; color: #444;">Capitanerie di Porto - Sistema Intranet</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Bandi e Concorsi -->
+                <fieldset>
+                    <legend>📁 BANDI E CONCORSI</legend>
+                    <table class="win-table">
+                        <thead>
+                            <tr>
+                                <th>Codice</th>
+                                <th>Profilo</th>
+                                <th>Stato</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>GC-98-B01</b></td>
+                                <td>VFP1 - Settore Navale</td>
+                                <td><font color="red"><b>APERTO</b></font></td>
+                            </tr>
+                            <tr>
+                                <td><b>GC-98-B02</b></td>
+                                <td>Ufficiali Ruolo Normale</td>
+                                <td><font color="green">30/11/98</font></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn-win" onclick="alert('Download via 56k...')">💾 Download Bando (.TXT)</button>
+                </fieldset>
+
+                <!-- Uniformi -->
+                <fieldset>
+                    <legend>👔 UNIFORMI D'ORDINANZA</legend>
+                    <div class="inset-box" style="font-size: 9px;">
+                        • <b>Estiva:</b> Giubba e pantaloni bianchi.<br>
+                        • <b>Invernale:</b> Panno blu notte con gradi.<br>
+                        • <b>Operativa:</b> Tuta ignifuga blu mare.
+                    </div>
+                </fieldset>
+
+                <!-- Modulo Equipaggiamento -->
+                <fieldset>
+                    <legend>📝 RICHIESTA EQUIPAGGIAMENTO</legend>
+                    <form onsubmit="event.preventDefault(); alert('Richiesta inviata!');">
+                        <table class="form-table">
+                            <tr>
+                                <td><b>Matricola:</b></td>
+                                <td><input type="text" value="GC-98-4412"></td>
+                            </tr>
+                            <tr>
+                                <td><b>Grado:</b></td>
+                                <td>
+                                    <select>
+                                        <option>Sottocapo</option>
+                                        <option>Sergente</option>
+                                        <option>Maresciallo</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Materiale:</b></td>
+                                <td>
+                                    <select>
+                                        <option>Gilet Salvagente 150N</option>
+                                        <option>Kit Soccorso Mare</option>
+                                        <option>Binocolo 7x50</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="text-align: right; margin-top: 4px;">
+                            <button type="submit" class="btn-win">📤 Invia</button>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div>🌐 56 kbps | Online</div>
+                <div>Visite: <b>[004291]</b></div>
+            </div>
+        </div>
     </div>
 </div>
 
