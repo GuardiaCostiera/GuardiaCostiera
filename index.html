@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Benvenuti nel sito della GUARDIA COSTIERA (v1.0)</title>
+    <style>
+        body {
+            background-color: #008080; /* Teal classico Windows 95 */
+            font-family: "MS Sans Serif", Tahoma, sans-serif;
+            font-size: 11px;
+            margin: 10px;
+        }
+
+        /* Finestra Stile Windows */
+        .window {
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 800px;
+            margin: 0 auto;
+            padding: 2px;
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            padding: 3px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-btn {
+            background-color: #c0c0c0;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            width: 16px;
+            height: 14px;
+            font-size: 9px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 12px;
+            cursor: pointer;
+        }
+
+        .menu-bar {
+            background-color: #c0c0c0;
+            padding: 2px 5px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .menu-bar span {
+            margin-right: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 10px;
+            background-color: #c0c0c0;
+        }
+
+        /* Riquadro interno scavato */
+        .inset-box {
+            background-color: #ffffff;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Form e Pulsanti */
+        fieldset {
+            border: 2px groove #ffffff;
+            margin-bottom: 10px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        input[type="text"], select, textarea {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            background-color: #fff;
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            padding: 2px;
+        }
+
+        .btn-win {
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            padding: 3px 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-win:active {
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        /* Tabella Anni '90 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+
+        th, td {
+            border: 1px solid #808080;
+            padding: 4px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #c0c0c0;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+        }
+
+        /* Effetti retrò */
+        marquee {
+            background-color: #000080;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            padding: 2px;
+            font-weight: bold;
+        }
+
+        .status-bar {
+            border-top: 2px solid #808080;
+            padding: 2px 5px;
+            background-color: #c0c0c0;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+<div class="window">
+    <!-- Barra del titolo -->
+    <div class="title-bar">
+        <span>C:\GUARDIA_COSTIERA\SITO_UFFICIALE.EXE</span>
+        <div style="display:flex; gap:2px;">
+            <div class="title-btn">_</div>
+            <div class="title-btn">□</div>
+            <div class="title-btn" onclick="alert('Impossibile chiudere il sistema!')">X</div>
+        </div>
+    </div>
+
+    <!-- Barra Menu -->
+    <div class="menu-bar">
+        <span><u>F</u>ile</span>
+        <span><u>M</u>enu</span>
+        <span><u>B</u>andi</span>
+        <span><u>U</u>niformi</span>
+        <span><u>A</u>uto</span>
+    </div>
+
+    <div class="content">
+        <!-- Testo scorrevole e Contatore -->
+        <marquee>+++ BENAVENUTI NEL SITO UFFICIALE DELLA GUARDIA COSTIERA - EMERGENZA MARE CHIAMA IL 1530 +++</marquee>
+        
+        <br>
+
+        <!-- Sezione Intro -->
+        <div class="inset-box">
+            <table border="0" style="border:none;">
+                <tr>
+                    <td style="border:none; width:60px;">
+                        <font size="6">⚓</font>
+                    </td>
+                    <td style="border:none;">
+                        <h2 style="margin:0; font-size:14px; color:#000080;">CORPO DELLE CAPITANERIE DI PORTO</h2>
+                        <b>Sistema Informativo Telematico (S.I.T.) - Anno 1998</b><br>
+                        <i>Ottimizzato per Netscape Navigator 4.0 e risoluzione 800x600 pixels.</i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Sezione 1: Bandi e Concorsi -->
+        <fieldset>
+            <legend>📁 Bandi e Concorsi Attivi</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Codice</th>
+                        <th>Descrizione Bando</th>
+                        <th>Scadenza</th>
+                        <th>Stato</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BND-1998-01</td>
+                        <td>Reclutamento VFP1 - Settore Navale</td>
+                        <td>15/10/1998</td>
+                        <td><font color="red"><b>IN CORSO</b></font></td>
+                    </tr>
+                    <tr>
+                        <td>BND-1998-02</td>
+                        <td>Concorso Ufficiali Ruolo Normale</td>
+                        <td>30/11/1998</td>
+                        <td>APERTURA</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <button class="btn-win" onclick="alert('Download Bando.pdf in corso via Modem 56k (Tempo stimato: 45 min)...')">
+                💾 Scarica Bando (.TXT)
+            </button>
+        </fieldset>
+
+        <!-- Sezione 2: Uniformi -->
+        <fieldset>
+            <legend>👔 Uniformi di Servizio</legend>
+            <div class="inset-box" style="background-color: #e0e0e0;">
+                <p><b>Regolamento Uniformi e Vestiario (Edizione 1995):</b></p>
+                <ul>
+                    <li><b>Ordinaria Estiva:</b> Giacca e pantaloni bianchi, scarpe bianche, berretto rigido.</li>
+                    <li><b>Ordinaria Invernale:</b> Veste blu notte, panno di lana, gradi dorati sulle maniche.</li>
+                    <li><b>Operativa per Unità Navali:</b> Tuta ignifuga blu mare con distintivo di reparto.</li>
+                </ul>
+            </div>
+        </fieldset>
+
+        <!-- Sezione 3: Richiesta Equipaggiamento -->
+        <fieldset>
+            <legend>📝 Modulo Richiesta Equipaggiamento Personale</legend>
+            <form onsubmit="event.preventDefault(); alert('Richiesta inviata al server centrale!');">
+                <table border="0" style="border:none;">
+                    <tr>
+                        <td style="border:none;"><b>Matricola:</b></td>
+                        <td style="border:none;"><input type="text" placeholder="Es. 98-GC-123" required></td>
+                        <td style="border:none;"><b>Grado:</b></td>
+                        <td style="border:none;">
+                            <select>
+                                <option>Sottocapo</option>
+                                <option>Sergente</option>
+                                <option>Maresciallo</option>
+                                <option>Tenente di Vascello</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;"><b>Materiale:</b></td>
+                        <td style="border:none;">
+                            <select>
+                                <option>Gilet Salvagente Auto-gonfiabile</option>
+                                <option>Kit Pronto Soccorso Navale</option>
+                                <option>Binocolo di Navigazione 7x50</option>
+                                <option>Tuta da Lavoro Estiva</option>
+                            </select>
+                        </td>
+                        <td style="border:none;"><b>Quantità:</b></td>
+                        <td style="border:none;"><input type="text" size="3" value="1"></td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" class="btn-win">📤 Invia Modulo</button>
+                <button type="reset" class="btn-win">❌ Annulla</button>
+            </form>
+        </fieldset>
+
+    </div>
+
+    <!-- Barra di Stato -->
+    <div class="status-bar">
+        <span>Connesso a: Dial-Up PPP Server (192.168.1.1)</span>
+        <span>Visitatori N°: <b>004291</b></span>
+    </div>
+</div>
+
+</body>
+</html>
